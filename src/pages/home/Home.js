@@ -44,7 +44,7 @@ const Home = () => {
 
     return (
         <div className="home">
-           
+           <h1>Hello from homepage</h1>
         </div>
     )
 }

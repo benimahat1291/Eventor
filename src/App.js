@@ -8,15 +8,22 @@ import Navbar from "./components/navbar/Navbar";
 
 function App() {
 
-  const {isAuthenticated} = useAuth0();
- 
-  return (
-      <Router>
-            <Route path="/" component={Login} />
-            {isAuthenticated && <Navbar />}
-            <Route exact path="/home" component={Home} />
-      </Router>
-  );
+    const { isLoading, isAuthenticated } = useAuth0();
+
+    return (
+        <>
+            <Router>
+                <Navbar />
+                {!isAuthenticated &&
+                    <Route path="/" component={Login} />}
+                {isAuthenticated &&
+                    (
+
+                        <Route exact path="/" component={Home} />
+                    )}
+            </Router>
+        </>
+    );
 };
 
 export default App;

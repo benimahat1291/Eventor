@@ -4,7 +4,7 @@ import { useAuth0 } from "@auth0/auth0-react";
 import "./Navbar.css"
 
 const Navbar = () => {
-    const { logout } = useAuth0();
+    const { logout, isAuthenticated } = useAuth0();
     const location = useLocation();
     return (
 
@@ -15,7 +15,7 @@ const Navbar = () => {
                         <span className="nav__eventor">Eventor</span>
                     </Link>
                 </div>
-
+               {isAuthenticated &&
                 <div className="nav__right">
                     <Link to="/yourevents">
                     <span>Your Events</span>
@@ -27,6 +27,7 @@ const Navbar = () => {
                     <span>Log Out</span>
                     </div>
                 </div>
+                }
 
 
 
