@@ -1,7 +1,7 @@
 import React from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
-import "./Navbar.css";
+import "./Navbar.css"
 
 const Navbar = () => {
     const { logout } = useAuth0();
@@ -11,21 +11,21 @@ const Navbar = () => {
         <>
             <div className="nav">
                 <div className="nav__left">
-                    <Link>
-                        <span>Eventor</span>
+                    <Link to="/home">
+                        <span className="nav__eventor">Eventor</span>
                     </Link>
                 </div>
 
                 <div className="nav__right">
-                    <Link>
+                    <Link to="/yourevents">
                     <span>Your Events</span>
                     </Link>
-                    <Link>
+                    <Link to="/allevents">
                     <span>All Events</span>
                     </Link>
-                    <Link onClick={() => logout({ returnTo: window.location.origin })}>
+                    <div className="nav__logout" onClick={() => logout({ returnTo: window.location.origin })}>
                     <span>Log Out</span>
-                    </Link>
+                    </div>
                 </div>
 
 

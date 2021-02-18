@@ -9,15 +9,30 @@
     z-index: 100;
 }
 
-.nav__left > a > span {
+.nav__left > a  {
     font-size: 30px;
     font-weight: bold;
     padding-left: 1vw;
+    color: lightblue;
+    text-decoration: none;
 }
 
-.nav__right {
-    width: 25%;
+
+
+.nav__right  {
     display: flex;
     justify-content: space-evenly;
-    font-size: 20px;
+    font-size: 20px;   
+    padding-right: 2vw;
+}
+
+.nav__right > a {
+    text-decoration: none;
+    color: lightblue;
+    padding-right: 2vw;
+}
+
+.nav__logout {
+    color: lightblue;
+    font-weight: bold;
 }

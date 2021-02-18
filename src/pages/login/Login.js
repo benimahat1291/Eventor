@@ -12,7 +12,7 @@ const Login = () => {
                 <div className="login__container">
                 <div className="login__card">
                     <h1 className="login__title">EVENT0R</h1>
-                    <h2 className>Organize Your Next Event</h2>
+                    <h2 >Organize Your Next Event</h2>
                     <button onClick={() => loginWithRedirect()} className="loginBtn">Log-in / Sign-up</button>
                 </div>
                 </div>
