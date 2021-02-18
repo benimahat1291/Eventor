@@ -14,7 +14,7 @@ function App() {
       <Router>
             <Route path="/" component={Login} />
             {isAuthenticated && <Navbar />}
-            <Route exact path="/profile" component={Home} />
+            <Route exact path="/home" component={Home} />
       </Router>
   );
 };
