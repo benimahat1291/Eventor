@@ -1,19 +1,20 @@
 .nav {
-    height: 5rem;
+    height: 10vh;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: black;
+    background-color: #e7eff6 ;
     position: sticky;
     top: 0;
     z-index: 100;
+    border-bottom: 1px solid #adcbe3 ;
 }
 
 .nav__left > a  {
     font-size: 30px;
     font-weight: bold;
-    padding-left: 1vw;
-    color: lightblue;
+    padding-left: 3rem;
+    color: #4b86b4 ;
     text-decoration: none;
 }
 
@@ -23,16 +24,16 @@
     display: flex;
     justify-content: space-evenly;
     font-size: 20px;   
-    padding-right: 2vw;
+    padding-right: 2rem;
 }
 
 .nav__right > a {
     text-decoration: none;
-    color: lightblue;
+    color: #4b86b4;
     padding-right: 2vw;
 }
 
 .nav__logout {
-    color: lightblue;
+    color: #4b86b4;
     font-weight: bold;
 }

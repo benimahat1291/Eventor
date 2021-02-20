@@ -2,35 +2,35 @@ import React, { useState, useEffect } from "react";
 import { Link, useLocation } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import API from "../../utils/API";
-import "./Home.css"
+import { IconButton } from "@material-ui/core/";
+import "./Home.css";
+import AddIcon from '@material-ui/icons/Add'
+import AddCircleIcon from '@material-ui/icons/AddCircle';
+import Event from "../../components/eventCard/Event"
 
 const Home = () => {
     const { user, isAuthenticated } = useAuth0();
-    const [userArr, setUserArr] = useState([]);
-    // const [userConfArr, setUserConfArr] = useState([])
+    const [userEvents, setUserEvents] = useState([])
     // // const [attConfArr, setAttConfArr] = useState([])
 
-  const saveUserToDb = (user) => {
+    const saveUserToDb = (user) => {
         API.saveUser(user)
-        .catch(err => console.log(err))
-        .then(console.log("saved"))
+            .catch(err => console.log(err))
+            .then(console.log("saved"))
     }
-
     console.log(user)
+    console.log("events", userEvents)
 
-   
+
 
     useEffect(() => {
-        setUserArr(user)
-        // console.log(userArr)
         saveUserToDb(user);
-        // API.getConferencebyUser(user.email).then(resp => {
-        //     console.log("data", resp.data)
-        //     // const tempArr = resp.data
-        //     // console.log(tempArr)
-        //     // const sortedArr = tempArr.sort((a, b) => (a.StartDate > b.StartDate) ? 1 : -1);
-        //     // setUserConfArr(sortedArr);
-        // })
+        API.getConferencebyUser(user.email).then(resp => {
+            console.log("data", resp.data)
+            const tempArr = resp.data
+            const sortedArr = tempArr.sort((a, b) => (a.StartDate > b.StartDate) ? 1 : -1);
+            setUserEvents(sortedArr);
+        })
 
         // API.getAttConference(user.email).then(resp => {
         //     const attArr = resp.data
@@ -40,11 +40,48 @@ const Home = () => {
         // })
 
     }, [])
-    
+
 
     return (
         <div className="home">
-           <h1>Hello from homepage</h1>
+            <div className="home__container">
+            <div className="home__left">
+                <div className="home__leftIcon">
+                <AddIcon/>
+                </div>
+                <Event events={userEvents}/>
+            </div>
+            <div className="home__right">
+                <h1>right</h1>
+
+            </div>
+            </div>
+            {/* <div className="home__header">
+                <div className="home__profileCard">
+                    <img src={user.picture} alt=""></img>
+                    <div className="home__userInfo">
+                        <h1>{user.name.toUpperCase()}</h1>
+                    </div>
+                </div>
+                <div className="home__addEvent">
+                    <div className="home__addEventIcon"><IconButton><AddCircleIcon /></IconButton></div>
+                </div>
+            </div> */}
+
+            {/* <div className="home__title">
+                <h1>Your Events</h1>
+            </div>
+
+            <div className="home__eventsContainer">
+                <div className="home__events">
+                    <Event events={userEvents} />
+                </div>
+                <div className="home__createEvent">
+                    <h1>Create Event</h1>
+                </div>
+
+
+            </div> */}
         </div>
     )
 }
@@ -57,7 +94,7 @@ export default Home
 
 
 // const Profile = () => {
-    
+
 //     // console.log(userConfArr)
 
 
@@ -65,7 +102,7 @@ export default Home
 //         isAuthenticated && (
 //             <div>
 //                 {/* user info */}
-               
+
 
 //                     <div  style={{ width:"50%", margin: "auto", borderRadius: "15px", paddingTop: "2vh", border: "5px solid #274046" }} className="gradientnav my-5">
 //                         <div style={{width:"50%", margin:"auto"}}>
@@ -82,13 +119,13 @@ export default Home
 //                             </Row>
 //                         </div>
 //                     </div>
-                    
+
 
 
 
 
 //                 {/* my conferences */}
-                
+
 //                     <Row>
 //                         <Col lg={6} md={12} className="bigCol">
 //                             <Card  style={{ borderRadius: "15px", border: "5px solid #274046"  }}  >
@@ -133,7 +170,7 @@ export default Home
 //                             </Card>
 //                         </Col>
 //                     </Row>
-            
+
 //             </div>
 //         )
 //     )

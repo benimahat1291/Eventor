@@ -14,13 +14,8 @@ function App() {
         <>
             <Router>
                 <Navbar />
-                {!isAuthenticated &&
-                    <Route path="/" component={Login} />}
-                {isAuthenticated &&
-                    (
-
-                        <Route exact path="/" component={Home} />
-                    )}
+                {!isAuthenticated && <Route path="/" component={Login} />}
+               {isAuthenticated && <Route exact path="/home" component={Home} />}
             </Router>
         </>
     );

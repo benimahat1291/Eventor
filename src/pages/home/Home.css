@@ -1,4 +1,90 @@
 .home {
-    height: 100vh;
-    background-color: lightgray;
+  background-color: #e7eff6 ;
+  height: 90vh;
 }
+
+.home__container {
+    display: flex
+}
+
+.home__left {
+    flex: 0.3;
+    border-right: 1px solid #adcbe3;
+    height: 90vh;
+    overflow: scroll;
+
+}
+
+.home__right {
+    flex: 0.7;
+}
+.home__leftIcon {
+    display: flex;
+    padding: 1rem;
+    padding-left: 3rem;
+}
+.MuiSvgIcon-root {
+    font-size: 3rem !important;
+    color: #4b86b4 ;
+  }
+
+
+
+
+/* .home__header {
+    display: flex;
+    justify-content: space-between;
+    background-color: #4b86b4   ;
+}
+
+.home__profileCard {
+  display: flex;
+  padding: 3rem 3rem 2rem 3rem;
+}
+
+.home__profileCard > img {
+  width: 7rem;
+  height: auto;
+}
+
+.home__userInfo {
+  padding-left: 1rem;
+  color: #adcbe3;
+  align-self: flex-end;
+  font-size: 2vw;
+}
+
+.home__addBio {
+  display: flex;
+  align-items: center;
+}
+
+.home__addEvent {
+  margin: 1rem;
+  border-radius: 5px 25px 25px 5px;
+  display: flex;
+  justify-content: flex-end;
+  font-size: 1rem;
+}
+
+
+
+.home__title {
+    color: #4b86b4;
+    margin: 1rem 0 1rem 3rem;
+}
+
+.home__eventsContainer {
+    display: flex;
+    background-color: #4b86b4 ;
+}
+
+.home__events {
+    flex: 0.5
+}
+
+.home__createEvent {
+    flex: 0.5;
+}
+ */
+

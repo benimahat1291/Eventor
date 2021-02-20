@@ -23,7 +23,7 @@ const Navbar = () => {
                     <Link to="/allevents">
                     <span>All Events</span>
                     </Link>
-                    <div className="nav__logout" onClick={() => logout({ returnTo: window.location.origin })}>
+                    <div className="nav__logout" onClick={() => logout()}>
                     <span>Log Out</span>
                     </div>
                 </div>
