@@ -9,7 +9,7 @@
 
 .home__left {
     flex: 0.3;
-    border-right: 1px solid #adcbe3;
+    border-right: 1px solid white;
     height: 90vh;
     overflow: scroll;
 

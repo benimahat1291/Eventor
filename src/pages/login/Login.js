@@ -24,8 +24,13 @@ const Login = () => {
                         },
                         "size": {
                             "value": 3
-                        }
+                        },
+                        
+            
                     },
+                    "color": {
+                        "value": "blue"
+                      },
                     "interactivity": {
                         "detect_on": "window",
                         "events": {
@@ -34,7 +39,8 @@ const Login = () => {
                                 "mode": "repulse"
                             }
                         }
-                    }
+                    },
+                   
                 }}
             ></Particles>
 

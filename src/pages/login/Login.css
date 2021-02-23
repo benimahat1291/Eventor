@@ -1,7 +1,7 @@
 
 #particles-js {
-    background: radial-gradient(circle, rgb(0, 0, 0) 0%,
-    rgb(0, 0, 0) 100%);
+    background: radial-gradient(circle, #e7eff6 0%,
+    #4b86b4  0%);
     height: 100vh;
 }
 

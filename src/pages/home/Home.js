@@ -1,16 +1,19 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation } from "react-router-dom";
+import { Link, useLocation, Route, useParams } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import API from "../../utils/API";
 import { IconButton } from "@material-ui/core/";
 import "./Home.css";
 import AddIcon from '@material-ui/icons/Add'
 import AddCircleIcon from '@material-ui/icons/AddCircle';
-import Event from "../../components/eventCard/Event"
+import Event from "../../components/event/Event"
+import EventTab from "../../components/eventTabs/EventTab"
+import NewEvent from "../../components/newEvent/NewEvent"
 
 const Home = () => {
     const { user, isAuthenticated } = useAuth0();
     const [userEvents, setUserEvents] = useState([])
+    let {event_id} = useParams();
     // // const [attConfArr, setAttConfArr] = useState([])
 
     const saveUserToDb = (user) => {
@@ -43,46 +46,26 @@ const Home = () => {
 
 
     return (
-        <div className="home">
-            <div className="home__container">
-            <div className="home__left">
-                <div className="home__leftIcon">
-                <AddIcon/>
-                </div>
-                <Event events={userEvents}/>
-            </div>
-            <div className="home__right">
-                <h1>right</h1>
+        <>
 
-            </div>
-            </div>
-            {/* <div className="home__header">
-                <div className="home__profileCard">
-                    <img src={user.picture} alt=""></img>
-                    <div className="home__userInfo">
-                        <h1>{user.name.toUpperCase()}</h1>
+            <div className="home">
+                <div className="home__container">
+                    <div className="home__left">
+                        <EventTab events={userEvents} />
                     </div>
+                    <Route exact path={"/yourevents/create/newevent"}>
+                        <div className="home__right">
+                            <NewEvent/>
+                        </div>
+                    </Route>
+                    <Route exact path={`/yourevents/:${event_id}`}>
+                        <div className="home__right">
+                            <Event/>
+                        </div>
+                    </Route>
                 </div>
-                <div className="home__addEvent">
-                    <div className="home__addEventIcon"><IconButton><AddCircleIcon /></IconButton></div>
-                </div>
-            </div> */}
-
-            {/* <div className="home__title">
-                <h1>Your Events</h1>
             </div>
-
-            <div className="home__eventsContainer">
-                <div className="home__events">
-                    <Event events={userEvents} />
-                </div>
-                <div className="home__createEvent">
-                    <h1>Create Event</h1>
-                </div>
-
-
-            </div> */}
-        </div>
+        </>
     )
 }
 
@@ -94,6 +77,32 @@ export default Home
 
 
 // const Profile = () => {
+{/* <div className="home__header">
+        <div className="home__profileCard">
+            <img src={user.picture} alt=""></img>
+            <div className="home__userInfo">
+                <h1>{user.name.toUpperCase()}</h1>
+            </div>
+        </div>
+        <div className="home__addEvent">
+            <div className="home__addEventIcon"><IconButton><AddCircleIcon /></IconButton></div>
+        </div>
+    </div> */}
+
+{/* <div className="home__title">
+        <h1>Your Events</h1>
+    </div>
+    
+    <div className="home__eventsContainer">
+        <div className="home__events">
+            <Event events={userEvents} />
+        </div>
+        <div className="home__createEvent">
+            <h1>Create Event</h1>
+        </div>
+    
+    
+    </div> */}
 
 //     // console.log(userConfArr)
 
