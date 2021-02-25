@@ -8,7 +8,8 @@ import AddIcon from '@material-ui/icons/Add'
 import PostAddOutlinedIcon from '@material-ui/icons/PostAddOutlined';
 import Event from "../../components/event/Event"
 import EventTab from "../../components/eventTabs/EventTab"
-import NewEvent from "../../components/newEvent/NewEvent"
+import NewEvent from "../../components/event/NewEvent"
+import EditEvent from "../../components/event/EditEvent"
 
 const Home = () => {
     const { user, isAuthenticated } = useAuth0();
@@ -56,28 +57,35 @@ const Home = () => {
                     <Route exact path={"/yourevents/"}>
                         <div className="home__right">
                             <div className="home__Add">
-                            <IconButton >
-                                <div className="home__AddIcon" >
-                                    <PostAddOutlinedIcon />
-                                    <h1>New Event</h1>
-                                </div>
-                            </IconButton>
+                                <IconButton >
+                                    <div className="home__AddIcon" >
+                                        <PostAddOutlinedIcon />
+                                        <h1>New Event</h1>
+                                    </div>
+                                </IconButton>
                             </div>
                         </div>
-                      
+
                     </Route>
-                <Route exact path={"/yourevents/create/newevent"}>
-                    <div className="home__right">
-                        <NewEvent />
-                    </div>
-                </Route>
-                <Route exact path={`/yourevents/:${event_id}`}>
-                    <div className="home__right">
-                        <Event />
-                    </div>
-                </Route>
+                    <Route exact path={"/yourevents/create/newevent"}>
+                        <div className="home__right">
+                            <NewEvent />
+                        </div>
+                    </Route>
+
+                    <Route exact path={`/yourevents/edit/:${event_id}`}>
+                        <div className="home__right">
+                            <EditEvent />
+                        </div>
+                    </Route>
+
+                    <Route exact path={`/yourevents/:${event_id}`}>
+                        <div className="home__right">
+                            <Event />
+                        </div>
+                    </Route>
+                </div>
             </div>
-        </div>
         </>
     )
 }

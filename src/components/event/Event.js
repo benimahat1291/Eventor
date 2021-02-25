@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react'
+import {Link} from "react-router-dom"
 import API from "../../utils/API"
-import {useHistory} from "react-router-dom"
+import { useHistory } from "react-router-dom"
 import "./Event.css"
 
 const Event = () => {
@@ -40,21 +41,37 @@ const Event = () => {
                 <div className="event__title">
                     <h1>{eventInfo.title}</h1>
                     <div className="event__titleOptions">
+                        <Link to={`edit/${eventInfo._id}`}>
                         <p>Edit</p>
+                        </Link>
                         <p>|</p>
-                      <div className="event__titleDelete" onClick={() => handleDelete(eventInfo._id)}>
+                        <div className="event__titleDelete" onClick={() => handleDelete(eventInfo._id)}>
                             <p>Delete</p>
-                      </div>
+                        </div>
 
-              
+
                     </div>
                 </div>
-                <h3 className="event__desc">{eventInfo.description}</h3>
-                <div className="event__details">
-                    <h3>Event Host:<span>{eventInfo.organization}</span></h3>
-                    <h3>Dates:<span>{eventInfo.EndDate}-{eventInfo.StartDate}</span></h3>
-                    <h3>Event Type:<span>{eventInfo.confType}</span></h3>
-                    <h3>Loaction:<span>{eventInfo.location}</span></h3>
+                <div className="event__info">
+                    <h3 className="event__desc">{eventInfo.description}</h3>
+                    <div className="event__details">
+                        <div className="event__detailsRow">
+                            <h3 className="event__detailsTitle">Event Host</h3>
+                            <h3 className="event__detailsSubtitle">{eventInfo.organization}</h3>
+                        </div>
+                        <div className="event__detailsRow">
+                            <h3 className="event__detailsTitle">Dates</h3>
+                            <h3 className="event__detailsSubtitle">{`${eventInfo.StartDate}`.slice(5).replace("-", "/")} - {`${eventInfo.EndDate}`.slice(5).replace("-", "/")}</h3>
+                        </div>
+
+                        <div className="event__detailsRow">
+                            <h3 className="event__detailsTitle">Location</h3>
+                            <h3 className="event__detailsSubtitle">{`${eventInfo.confType}`.toUpperCase()}</h3>
+                        </div>
+                            <h3 className="event__detailsSubtitle event__location">{eventInfo.location}</h3>
+
+                       
+                    </div>
                 </div>
 
             </div>

@@ -16,7 +16,7 @@ function App() {
         <>
             <Switch>
                 <Navbar />
-                {!isAuthenticated && <Route exact path="/" component={Login} />}
+                {!isAuthenticated && <Route path="/" component={Login} />}
                 {isAuthenticated && <Route path="/yourevents">
                     <Home />
                 </Route>}

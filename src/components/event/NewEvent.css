@@ -186,7 +186,6 @@ textarea:focus {
 }
 
 .NewEvent__submit {
-    justify-self: flex-end;
     margin-top: 3rem;
     color: white;
     background: #1167b1;
