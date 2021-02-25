@@ -18,15 +18,35 @@
 .home__right {
     flex: 0.7;
 }
-.home__leftIcon {
-    display: flex;
-    padding: 1rem;
-    padding-left: 3rem;
+
+
+.home__AddIcon > svg {
+    font-size: 5rem !important;
+    color: #4b86b4;
+    opacity: 1;
 }
-.MuiSvgIcon-root {
-    font-size: 3rem !important;
-    color: #4b86b4 ;
-  }
+
+.home__Add {
+    display: flex;
+    flex-direction: column;
+    height: 80vh;
+    justify-content: center;
+    align-items: center;
+    color: #4b86b4;
+}
+
+.home__AddIcon {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 10rem;
+    height: 10rem;
+    font-size: 0.5rem;
+    background-color: white;
+    opacity: 0.4;
+    border-radius: 50%;
+}
 
 
 

@@ -15,7 +15,7 @@ const EventTab = ({ events }) => {
         <div className="eventTab">
             <div className="eventTab__container">
                 <Link to="/yourevents/create/newevent">
-                    <div className="home__leftIcon">
+                    <div className="eventTab__leftIcon">
                         <IconButton>
                             <AddIcon />
                         </IconButton>
@@ -31,12 +31,6 @@ const EventTab = ({ events }) => {
                             </div>
                         </Link>
                     </div>
-
-
-
-
-
-
                 ))
 
                 }

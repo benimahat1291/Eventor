@@ -1,6 +1,13 @@
-.eventTab__container {
-
+.eventTab__leftIcon {
+    display: flex;
+    padding: 1rem;
+    padding-left: 3rem;
 }
+.MuiSvgIcon-root {
+    font-size: 3rem !important;
+    color: #4b86b4 ;
+  }
+
 
 .eventTab__card {
     display: flex;

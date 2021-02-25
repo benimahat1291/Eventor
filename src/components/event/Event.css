@@ -6,8 +6,24 @@
     justify-content: space-between;
 }
 
+
+
 .event__title {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
     color: #4b86b4
+}
+.event__titleOptions {
+    width: 10vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.event__titleDelete:hover {
+    cursor: pointer;
+    scale: 1.2;
 }
 
 .event__desc {

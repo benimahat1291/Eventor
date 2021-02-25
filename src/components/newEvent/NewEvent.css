@@ -1,0 +1,198 @@
+.newevent {
+    padding: 3rem;
+    overflow: scroll;
+}
+.confName {
+    height: 2rem;
+    width: 15rem;
+}
+
+.EventForm {
+    height: 70vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+   
+}
+
+.EventForm__name{
+    display: flex;
+    flex-direction: column;
+}
+
+.EventForm__nameLabel{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1167b1;
+}
+
+.EventForm__nameInput {
+    width:50%;
+    height: 3rem;
+    margin: 1rem 0rem;
+    padding-left: 2rem;
+    border: none;
+    border-radius: 25px;
+    color: #03254c;
+    font-size: 2rem;
+}
+
+
+.EventForm__organization {
+    display: flex;
+    flex-direction: column;
+}
+
+.EventForm__organizationLabel{
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1167b1;
+}
+
+.EventForm__organizationInput {
+    height: 2rem;
+    width: 20vw;
+    margin-top: 1rem;
+    padding-left: 2rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 25px;
+    color: #03254c;
+    font-size: 1.5rem;
+}
+
+input:focus {
+    outline: none;
+  }
+
+textarea:focus {
+    outline: none;
+}
+
+.NewEvent__date {
+  display: flex;
+}
+
+
+.NewEvent__startDate {
+    display: flex;   
+    flex-direction: column;
+    margin-left: 3rem;
+}
+
+.NewEvent__dateInput {
+    height: 2rem;
+    margin: 1rem 0rem;
+    padding-left: 2rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 25px;
+    background: white;
+    color: #03254c;
+    font-size: 1.5rem;
+}
+
+.NewEvent__dateLabel {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1167b1;
+}
+
+.NewEvent__endDate {
+    display: flex;   
+    flex-direction: column;
+    margin-left: 3rem;
+}
+
+.EventForm__orgDate {
+    display: flex;
+}
+
+.NewEvent__description {
+    display: flex;
+    flex-direction: column;
+}
+
+.NewEvent__descriptionLabel {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1167b1;
+}
+
+.NewEvent__descriptionInput {
+    height: 10rem;
+    margin: 1rem 0rem;
+    padding-left: 2rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 25px;
+    background: white;
+    color: #03254c;
+    font-size: 1.5rem;
+}
+
+.NewEvent__locationRow {
+    display: flex;
+}
+
+.NewEvent__radio {
+    display: flex;
+    flex-direction: column;
+}
+
+.NewEvent__radioLabel {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1167b1;
+}
+
+.NewEvent__radioOptions {
+    display: flex;
+    margin-top: 1rem;
+    }
+.NewEvent__radioOption {
+    margin: 0.5rem 1rem 0 0;
+}
+
+.NewEvent__radioOption > label {
+    color: #1167b1 ;
+    margin-left: 0.5rem;
+}
+
+.NewEvent__location {
+    display: flex;
+    flex-direction: column;
+    margin-left: 3rem;
+}
+
+
+.NewEvent__locationLabel {
+    font-size: 1rem;
+    font-weight: bold;
+    color: #1167b1;
+}
+
+.NewEvent__locationInput {
+    height: 2rem;
+    width: 20rem;
+    margin: 1rem 0rem;
+    padding-left: 2rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 25px;
+    background: white;
+    color: #03254c;
+    font-size: 1rem;
+}
+
+.NewEvent__submit {
+    justify-self: flex-end;
+    margin-top: 3rem;
+    color: white;
+    background: #1167b1;
+    border: none;
+    border-radius: 25px;
+    height: 3rem;
+    padding: 0 1rem;
+    font-size: 2rem;
+}
