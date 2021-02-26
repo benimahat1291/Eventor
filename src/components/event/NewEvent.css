@@ -20,10 +20,23 @@
     flex-direction: column;
 }
 
-.EventForm__nameLabel{
+.form__label{
     font-size: 1rem;
     font-weight: bold;
     color: #1167b1;
+}
+
+.form__input {
+    height: 2rem;
+    width: 20rem;
+    margin: 1rem 0rem;
+    padding-left: 2rem;
+    border: none;
+    text-decoration: none;
+    border-radius: 25px;
+    background: white;
+    color: #03254c;
+    font-size: 1rem;
 }
 
 .EventForm__nameInput {
@@ -43,11 +56,7 @@
     flex-direction: column;
 }
 
-.EventForm__organizationLabel{
-    font-size: 1rem;
-    font-weight: bold;
-    color: #1167b1;
-}
+
 
 .EventForm__organizationInput {
     height: 2rem;
@@ -92,11 +101,7 @@ textarea:focus {
     font-size: 1.5rem;
 }
 
-.NewEvent__dateLabel {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #1167b1;
-}
+
 
 .NewEvent__endDate {
     display: flex;   
@@ -113,15 +118,10 @@ textarea:focus {
     flex-direction: column;
 }
 
-.NewEvent__descriptionLabel {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #1167b1;
-}
 
 .NewEvent__descriptionInput {
     height: 10rem;
-    margin: 1rem 0rem;
+    margin: 1rem 0rem 2rem 0;
     padding-left: 2rem;
     border: none;
     text-decoration: none;
@@ -140,11 +140,6 @@ textarea:focus {
     flex-direction: column;
 }
 
-.NewEvent__radioLabel {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #1167b1;
-}
 
 .NewEvent__radioOptions {
     display: flex;
@@ -154,10 +149,7 @@ textarea:focus {
     margin: 0.5rem 1rem 0 0;
 }
 
-.NewEvent__radioOption > label {
-    color: #1167b1 ;
-    margin-left: 0.5rem;
-}
+
 
 .NewEvent__location {
     display: flex;
@@ -165,12 +157,6 @@ textarea:focus {
     margin-left: 3rem;
 }
 
-
-.NewEvent__locationLabel {
-    font-size: 1rem;
-    font-weight: bold;
-    color: #1167b1;
-}
 
 .NewEvent__locationInput {
     height: 2rem;
@@ -185,13 +171,17 @@ textarea:focus {
     font-size: 1rem;
 }
 
-.NewEvent__submit {
-    margin-top: 3rem;
+.form__button {
+    margin-top: 2rem;
     color: white;
-    background: #1167b1;
+    background: #4b86b4;
     border: none;
     border-radius: 25px;
     height: 3rem;
+    width: 30%;
     padding: 0 1rem;
     font-size: 2rem;
+    align-self: flex-end;
+    
 }
+

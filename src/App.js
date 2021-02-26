@@ -17,6 +17,8 @@ function App() {
 
     return (
         <>
+        <div className="eventor__app">
+
             <Switch>
                 <Navbar />
                 {!isAuthenticated && <Route path="/" component={Login} />}
@@ -40,6 +42,7 @@ function App() {
 
 
             </Switch>
+                </div>
         </>
     );
 };

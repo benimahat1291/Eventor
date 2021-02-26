@@ -117,7 +117,7 @@ const EditEvent = () => {
 
                 {/* <Button onClick={handleFormUpdate} type="submit">Update form</Button> */}
                 <div>
-                <Button className="NewEvent__submit" onClick={handleFormSubmit} type="submit">Save Changes</Button>
+                <Button className="form__button" onClick={handleFormSubmit} type="submit">Save Changes</Button>
                 </div>
             </Form>
 

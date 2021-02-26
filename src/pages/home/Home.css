@@ -1,22 +1,22 @@
 .home {
   background-color: #e7eff6 ;
-  height: 90vh;
 }
 
 .home__container {
-    display: flex
+    display: flex;
+    /* height: 100%; */
+    height: 89vh;
 }
 
 .home__left {
     flex: 0.3;
     border-right: 1px solid white;
-    height: 90vh;
     overflow: scroll;
-
 }
 
 .home__right {
     flex: 0.7;
+    overflow: scroll;
 }
 
 
