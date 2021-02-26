@@ -20,7 +20,7 @@ const Navbar = () => {
                     <Link to="/yourevents">
                     <span>Your Events</span>
                     </Link>
-                    <Link to="/allevents">
+                    <Link to="/home">
                     <span>All Events</span>
                     </Link>
                     <div className="nav__logout" onClick={() => logout()}>

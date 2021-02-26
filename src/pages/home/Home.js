@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Link, useLocation, Route, useParams } from "react-router-dom";
+import { Link, useLocation, Route, Redirect, useParams } from "react-router-dom";
 import { useAuth0 } from "@auth0/auth0-react";
 import API from "../../utils/API";
 import { IconButton } from "@material-ui/core/";
@@ -33,7 +33,7 @@ const Home = () => {
             console.log("data", resp.data)
             const tempArr = resp.data
             const sortedArr = tempArr.sort((a, b) => (a.StartDate > b.StartDate) ? 1 : -1);
-            setUserEvents(sortedArr);
+            setUserEvents(tempArr);
         })
 
         // API.getAttConference(user.email).then(resp => {
@@ -54,19 +54,20 @@ const Home = () => {
                     <div className="home__left">
                         <EventTab events={userEvents} />
                     </div>
-                    <Route exact path={"/yourevents/"}>
-                        <div className="home__right">
-                            <div className="home__Add">
-                                <IconButton >
-                                    <div className="home__AddIcon" >
-                                        <PostAddOutlinedIcon />
-                                        <h1>New Event</h1>
-                                    </div>
-                                </IconButton>
+                        <Route exact path={"/yourevents"}>
+                            <div className="home__right">
+                                <div className="home__Add">
+                                    <IconButton >
+                                        <div className="home__AddIcon" >
+                                            <PostAddOutlinedIcon />
+                                            <h1>New Event</h1>
+                                        </div>
+                                    </IconButton>
+                                </div>
                             </div>
-                        </div>
 
-                    </Route>
+                        </Route>
+
                     <Route exact path={"/yourevents/create/newevent"}>
                         <div className="home__right">
                             <NewEvent />

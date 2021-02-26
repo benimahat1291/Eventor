@@ -10,6 +10,7 @@ const NewEvent = () => {
 
     const { user, isAuthenticated } = useAuth0();
     const history = useHistory();
+    let [redirect, setRedirect] = useState(false);
 
     let [formObject, setFormObject] = useState({
         EndDate: "01/01/2021",
@@ -31,8 +32,10 @@ const NewEvent = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         API.saveConference({ ...formObject, email: user.email })
-            .then(history.push("/conference_created"))
-            .catch(err => console.log(err));
+       .then(setTimeout(()=>(history.push("/savesuccess")), 3000))
+        
+        
+    
     }
 
 
@@ -81,7 +84,7 @@ const NewEvent = () => {
 
 
                 <Form.Group className="NewEvent__description" controlId="NewEvent__description">
-                    <Form.Label className="NewEvent__descriptionLabel">Conference Description</Form.Label>
+                    <Form.Label className="NewEvent__descriptionLabel">Description</Form.Label>
                     <Form.Control required as="textarea" rows={8} type="input" name="description" placeholder="" value={formObject.name} className="NewEvent__descriptionInput" onChange={handleInputChange} />
                     <Form.Control.Feedback type="invalid">
                     </Form.Control.Feedback>
@@ -102,7 +105,7 @@ const NewEvent = () => {
                 </Form.Group>
 
                 <Form.Group className="NewEvent__location" controlId="NewEvent__location">
-                    <Form.Label  className="NewEvent__locationLabel">Conference Location</Form.Label>
+                    <Form.Label  className="NewEvent__locationLabel">Location</Form.Label>
                     <Form.Control required type="input" name="location" placeholder="URL or Adress" value={formObject.name} className="NewEvent__locationInput" onChange={handleInputChange} />
                     <Form.Control.Feedback type="invalid">
                     </Form.Control.Feedback>

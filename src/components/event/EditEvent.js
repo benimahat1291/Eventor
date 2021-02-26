@@ -30,7 +30,7 @@ const EditEvent = () => {
     const handleFormSubmit = (e) => {
         e.preventDefault();
         API.updateConference({...formObject}, confId)
-        .then(history.push("/home"))
+        .then(setTimeout(()=>(history.push(`/editsuccess/${confId}`)),2000))
     }
     
 
@@ -87,7 +87,7 @@ const EditEvent = () => {
 
 
                 <Form.Group className="NewEvent__description" controlId="NewEvent__description">
-                    <Form.Label className="NewEvent__descriptionLabel">Conference Description</Form.Label>
+                    <Form.Label className="NewEvent__descriptionLabel">Description</Form.Label>
                     <Form.Control required as="textarea" rows={8} type="input" name="description" placeholder="" value={formObject.description} className="NewEvent__descriptionInput" onChange={handleInputChange} />
                     <Form.Control.Feedback type="invalid">
                     </Form.Control.Feedback>
@@ -108,7 +108,7 @@ const EditEvent = () => {
                 </Form.Group>
 
                 <Form.Group className="NewEvent__location" controlId="NewEvent__location">
-                    <Form.Label  className="NewEvent__locationLabel">Conference Location</Form.Label>
+                    <Form.Label  className="NewEvent__locationLabel">Location</Form.Label>
                     <Form.Control required type="input" name="location" placeholder={formObject.location} value={formObject.location} className="NewEvent__locationInput" onChange={handleInputChange} />
                     <Form.Control.Feedback type="invalid">
                     </Form.Control.Feedback>

@@ -1,13 +1,21 @@
 .eventTab__leftIcon {
     display: flex;
+    align-items: center;
+    justify-content: space-between;
     padding: 1rem;
     padding-left: 3rem;
 }
 .MuiSvgIcon-root {
     font-size: 3rem !important;
     color: #4b86b4 ;
+   
   }
 
+  a:-webkit-any-link {
+    color: #4b86b4;
+    cursor: pointer;
+    text-decoration: none !important;
+}
 
 .eventTab__card {
     display: flex;
@@ -15,6 +23,11 @@
     height: 5rem;
     border-top: 1px solid white ;
     color: #1167b1  ;
+}
+
+.eventTab__leftIconTitle {
+    font-size: 1.3rem;
+   
 }
 
 .eventTab__title{

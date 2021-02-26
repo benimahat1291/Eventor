@@ -1,0 +1,28 @@
+.sessions__title {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 3rem;
+    color: #1167b1;
+    background: white;
+    border-radius : 10px;
+    margin: 2rem 0 1rem 0;  
+}
+
+.sessions__title > h1 {
+    margin-left: 1rem;
+    font-size: 1.5rem;
+    font-weight: normal;
+}
+
+.sessions__addSession {
+    width: 10vw;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+.sessions__addSession:hover {
+    cursor: pointer;
+    font-weight: bolder;
+}

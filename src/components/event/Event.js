@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from 'react'
-import {Link} from "react-router-dom"
+import { Link, Route } from "react-router-dom"
 import API from "../../utils/API"
 import { useHistory } from "react-router-dom"
 import "./Event.css"
+import Sessions from '../sessions/Sessions'
 
 const Event = () => {
 
@@ -10,6 +11,7 @@ const Event = () => {
     const [eventInfo, setEventInfo] = useState([])
     const urlArray = window.location.href.split("/")
     let eventId = urlArray[urlArray.length - 1]
+  
 
 
 
@@ -24,10 +26,10 @@ const Event = () => {
 
 
     function handleDelete(confId) {
-        API.deleteConference(confId).then(
-            history.push("/yourevents")
-        )
+        API.deleteConference(confId)
+        .then(setTimeout(()=>(history.push("/success")),1000))
     }
+
 
     console.log("eventinfo", eventInfo)
 
@@ -42,7 +44,7 @@ const Event = () => {
                     <h1>{eventInfo.title}</h1>
                     <div className="event__titleOptions">
                         <Link to={`edit/${eventInfo._id}`}>
-                        <p>Edit</p>
+                            <p>Edit</p>
                         </Link>
                         <p>|</p>
                         <div className="event__titleDelete" onClick={() => handleDelete(eventInfo._id)}>
@@ -68,13 +70,19 @@ const Event = () => {
                             <h3 className="event__detailsTitle">Location</h3>
                             <h3 className="event__detailsSubtitle">{`${eventInfo.confType}`.toUpperCase()}</h3>
                         </div>
-                            <h3 className="event__detailsSubtitle event__location">{eventInfo.location}</h3>
+                        <h3 className="event__detailsSubtitle event__location">{eventInfo.location}</h3>
 
-                       
+
                     </div>
                 </div>
 
+                <div className="event__sessions">
+
+                 <Sessions eventId={eventInfo._id}/>
+
+                </div>
             </div>
+
 
 
 
