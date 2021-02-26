@@ -4,7 +4,7 @@ import "./Sessions.css"
 
 const Sessions = (eventId) => {
 
-    let [formDisplay, setFormDisplay] = useState(true);
+    let [formDisplay, setFormDisplay] = useState(false);
     console.log(eventId)
     
     const handleFormDisplay = () => {

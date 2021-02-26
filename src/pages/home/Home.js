@@ -56,6 +56,7 @@ const Home = () => {
                     </div>
                         <Route exact path={"/yourevents"}>
                             <div className="home__right">
+                                <Link to="/yourevents/create/newevent">
                                 <div className="home__Add">
                                     <IconButton >
                                         <div className="home__AddIcon" >
@@ -64,6 +65,7 @@ const Home = () => {
                                         </div>
                                     </IconButton>
                                 </div>
+                                </Link>
                             </div>
 
                         </Route>
