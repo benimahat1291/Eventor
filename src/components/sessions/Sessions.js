@@ -1,8 +1,10 @@
-import React, {useState} from 'react'
+import React, {useEffect, useState} from 'react'
 import NewSession from '../sessions/NewSession'
 import "./Sessions.css"
+import Session from "./Session"
 
 const Sessions = (eventId) => {
+
 
     let [formDisplay, setFormDisplay] = useState(false);
     console.log(eventId)
@@ -15,6 +17,10 @@ const Sessions = (eventId) => {
         }
     }
 
+    useEffect(()=>{
+        return setFormDisplay(false)
+    },[eventId])
+
     return (
         <div className="sessions">
                <div className="sessions__title">
@@ -25,7 +31,11 @@ const Sessions = (eventId) => {
                     </div>
 
                     <div className="event__newSession">
-                        {formDisplay === true ? <NewSession /> : null}
+                        {formDisplay === true ? <NewSession eventId={eventId} /> : <Session eventId={eventId}/>}
+                    </div>
+
+                    <div className="sessions__container">
+                       
                     </div>
         </div>
     )

@@ -1,0 +1,19 @@
+.session {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    border: 2px solid white;
+    border-radius: 0 0 10px 10px;
+}
+
+.session__card {
+    display: flex;
+    justify-content: space-between;
+    padding: 1rem;
+    border-top: 2px solid white;
+    font-size: .8rem;
+}
+
+.session__timeInfo {
+    display: flex;
+}

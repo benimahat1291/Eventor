@@ -172,16 +172,15 @@ textarea:focus {
 }
 
 .form__button {
+    display: flex;
+    align-items: center;
     margin-top: 2rem;
     color: white;
     background: #4b86b4;
     border: none;
     border-radius: 25px;
     height: 3rem;
-    width: 30%;
-    padding: 0 1rem;
+    padding: 1rem 1rem;
     font-size: 2rem;
-    align-self: flex-end;
-    
 }
 
