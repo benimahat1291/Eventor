@@ -18,7 +18,7 @@ const Session = ({ eventId }) => {
             setSessArr(resp.data)
         })
         return setSessionId("")
-    }, [sesEventId])
+    }, [sesEventId, sessionId])
 
     console.log("SessArr >> ", sessArr)
 
@@ -63,7 +63,10 @@ const Session = ({ eventId }) => {
                                 </p>
 
                             </div>
+                            <div>
+                            <h4 className={infoDisplay === e._id ? `session__edit` : `session__Hide`}>Delete</h4>
                             <h4 className={infoDisplay === e._id ? `session__edit` : `session__Hide`}>Edit</h4>
+                            </div>
                         </div>
 
                     </div>

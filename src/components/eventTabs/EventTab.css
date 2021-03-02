@@ -31,8 +31,13 @@
 }
 
 .eventTab__title{
-    padding-left: 3rem;
+    display: flex;
+    justify-content: flex-start;
+    margin-left: 2rem;
+    width: 80%;
     font-size: 0.8rem;
+    overflow: scroll;
+    text-overflow: ellipsis
 }
 
 .eventTab__card:hover{
@@ -42,6 +47,7 @@
 
 .eventTab__link > a {
     text-decoration: none;
+    white-space: nowrap;
     color: #2a4d69
 }
 

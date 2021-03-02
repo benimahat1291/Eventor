@@ -11,7 +11,7 @@ const Event = () => {
     const [eventInfo, setEventInfo] = useState([])
     const urlArray = window.location.href.split("/")
     let eventId = urlArray[urlArray.length - 1]
-  
+
 
 
 
@@ -27,7 +27,7 @@ const Event = () => {
 
     function handleDelete(confId) {
         API.deleteConference(confId)
-        .then(setTimeout(()=>(history.push("/success")),1000))
+            .then(setTimeout(() => (history.push("/success")), 1000))
     }
 
 
@@ -56,29 +56,34 @@ const Event = () => {
                 </div>
                 <div className="event__info">
                     <h3 className="event__desc">{eventInfo.description}</h3>
-                    <div className="event__details">
-                        <div className="event__detailsRow">
-                            <h3 className="event__detailsTitle">Event Host</h3>
-                            <h3 className="event__detailsSubtitle">{eventInfo.organization}</h3>
-                        </div>
-                        <div className="event__detailsRow">
-                            <h3 className="event__detailsTitle">Dates</h3>
-                            <h3 className="event__detailsSubtitle">{`${eventInfo.StartDate}`.slice(5).replace("-", "/")} - {`${eventInfo.EndDate}`.slice(5).replace("-", "/")}</h3>
-                        </div>
-
-                        <div className="event__detailsLocationRow">
-                            <h3 className="event__detailsTitle">Location</h3>
-                            <h3 className="event__detailsSubtitle event__confType">{`${eventInfo.confType}`.toUpperCase()}</h3>
-                        </div>
-                        <h3 className="event__detailsSubtitle event__location">{eventInfo.location}</h3>
+                    <div className="event__detailContainer">
 
 
+                        <div className="event__details">
+                            <div className="event__detailsRow">
+                                <h3 className="event__detailsTitle">Event Host</h3>
+                                <h3 className="event__detailsSubtitle">{eventInfo.organization}</h3>
+                            </div>
+                            <div className="event__detailsRow">
+                                <h3 className="event__detailsTitle">Dates</h3>
+                                <h3 className="event__detailsSubtitle">{`${eventInfo.StartDate}`.slice(5).replace("-", "/")} - {`${eventInfo.EndDate}`.slice(5).replace("-", "/")}</h3>
+                            </div>
+                            <div>
+                                <div className="event__detailsLocationRow">
+                                    <h3 className="event__detailsTitle">Location</h3>
+                                    <h3 className="event__detailsSubtitle event__confType">{`${eventInfo.confType}`.toUpperCase()}</h3>
+                                </div>
+                                <h3 className="event__location">{eventInfo.location}</h3>
+                            </div>
+
+
+                        </div>
                     </div>
                 </div>
 
                 <div className="event__sessions">
 
-                 <Sessions eventId={eventInfo._id}/>
+                    <Sessions eventId={eventInfo._id} />
 
                 </div>
             </div>
