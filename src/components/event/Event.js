@@ -26,8 +26,12 @@ const Event = () => {
 
 
     function handleDelete(confId) {
-        API.deleteConference(confId)
-            .then(setTimeout(() => (history.push("/success")), 1000))
+        if(window.confirm("Are you sure you want to delete this event?")){
+            API.deleteConference(confId)
+                .then(setTimeout(() => (history.push("/success")), 1000))
+        } else {
+            return
+        }
     }
 
 

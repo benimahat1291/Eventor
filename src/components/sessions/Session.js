@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import API from "../../utils/API"
+import {Link, useHistory} from "react-router-dom"
 import PersonIcon from '@material-ui/icons/Person';
 import EventIcon from '@material-ui/icons/Event';
 import ScheduleIcon from '@material-ui/icons/Schedule';
@@ -7,7 +8,7 @@ import "./Session.css"
 
 const Session = ({ eventId }) => {
     let sesEventId = eventId.eventId
-    console.log("sesEventId", sesEventId)
+    const history = useHistory();
     const [sessArr, setSessArr] = useState([]);
     let [sessionId, setSessionId] = useState("")
     let [infoDisplay, setInfoDisplay] = useState("")
@@ -27,6 +28,15 @@ const Session = ({ eventId }) => {
             setInfoDisplay("")
         } else {
             setInfoDisplay(sessId)
+        }
+    }
+
+    const handleDelete = (sessionId) => {
+        if(window.confirm("Are you sure you want to delete?")){
+           API.deleteSession(sessionId)
+           .then(setTimeout(()=>(history.push(`/editsuccess/${sesEventId}`)),2000))
+        } else {
+            return
         }
     }
 
@@ -64,8 +74,10 @@ const Session = ({ eventId }) => {
 
                             </div>
                             <div>
-                            <h4 className={infoDisplay === e._id ? `session__edit` : `session__Hide`}>Delete</h4>
+                            <h4 onClick={() => handleDelete(e._id)} className={infoDisplay === e._id ? `session__edit` : `session__Hide`}>Delete</h4>
+                            <Link to={`editsession/${e._id}`}>
                             <h4 className={infoDisplay === e._id ? `session__edit` : `session__Hide`}>Edit</h4>
+                            </Link>
                             </div>
                         </div>
 

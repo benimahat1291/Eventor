@@ -10,11 +10,12 @@ import Event from "../../components/event/Event"
 import EventTab from "../../components/eventTabs/EventTab"
 import NewEvent from "../../components/event/NewEvent"
 import EditEvent from "../../components/event/EditEvent"
+import EditSession from "../../components/sessions/EditSession"
 
 const Home = () => {
     const { user, isAuthenticated } = useAuth0();
     const [userEvents, setUserEvents] = useState([])
-    let { event_id } = useParams();
+    let { event_id, sess_id } = useParams();
     // // const [attConfArr, setAttConfArr] = useState([])
 
     const saveUserToDb = (user) => {
@@ -85,6 +86,12 @@ const Home = () => {
                     <Route exact path={`/yourevents/:${event_id}`}>
                         <div className="home__right">
                             <Event />
+                        </div>
+                    </Route>
+
+                    <Route exact path={`/yourevents/editsession/:${sess_id}`}>
+                    <div className="home__right">
+                        <EditSession/>
                         </div>
                     </Route>
                 </div>
