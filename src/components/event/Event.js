@@ -66,9 +66,9 @@ const Event = () => {
                             <h3 className="event__detailsSubtitle">{`${eventInfo.StartDate}`.slice(5).replace("-", "/")} - {`${eventInfo.EndDate}`.slice(5).replace("-", "/")}</h3>
                         </div>
 
-                        <div className="event__detailsRow">
+                        <div className="event__detailsLocationRow">
                             <h3 className="event__detailsTitle">Location</h3>
-                            <h3 className="event__detailsSubtitle">{`${eventInfo.confType}`.toUpperCase()}</h3>
+                            <h3 className="event__detailsSubtitle event__confType">{`${eventInfo.confType}`.toUpperCase()}</h3>
                         </div>
                         <h3 className="event__detailsSubtitle event__location">{eventInfo.location}</h3>
 
