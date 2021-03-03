@@ -8,6 +8,7 @@ import Navbar from "./components/navbar/Navbar";
 import Event from "./components/event/Event"
 import Success from "./utils/Success"
 import SaveSuccess from "./utils/SaveSuccess"
+import AllEvents from "./pages/allevents/AllEvents"
 
 function App() {
 
@@ -24,6 +25,10 @@ function App() {
                 {!isAuthenticated && <Route path="/" component={Login} />}
                 {isAuthenticated && 
                 <div>
+                <Route path="/home">
+                    <AllEvents/>
+                </Route>
+            
                 <Route path="/yourevents">
                     <Home />
                 </Route>

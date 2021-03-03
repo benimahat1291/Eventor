@@ -22,7 +22,7 @@
 
 .home__AddIcon > svg {
     font-size: 5rem !important;
-    color: #4b86b4;
+    color: white;
     opacity: 1;
 }
 
@@ -43,13 +43,13 @@
     width: 10rem;
     height: 10rem;
     font-size: 0.5rem;
-    background-color: white;
+    background-color: #1167b1;
     opacity: 0.4;
     border-radius: 50%;
 }
 
 .home__AddIcon > h1 {
-    color: #03254c
+    color: white;
 }
 
 

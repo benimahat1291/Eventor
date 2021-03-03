@@ -1,0 +1,27 @@
+.eventcards {
+    display: flex;
+    justify-content: space-between;
+    align-content: center;
+    flex-wrap: wrap;
+    width: 80%;
+    margin: auto;
+}
+
+.eventcard__container{
+    border: 2px solid white;
+    border-radius: 10px;
+    width: 20rem;
+    height: 10rem;
+    margin-top: 1rem
+}
+
+.eventcard__title {
+    font-size: 0.8rem;
+    background-color: #94C1E6;
+    color: white;
+    border-radius: 10px 10px 0 0 ;
+}
+
+.eventcard__title > h1{
+    margin-left: 0.5rem
+}

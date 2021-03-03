@@ -1,0 +1,40 @@
+.allevents{
+    background-color: #e7eff6 ;
+    height: 200vh;
+  }
+  
+.allevents__headerContainer {
+    background-color: #94C1E6;
+    padding: 5rem;
+    z-index: -100;
+}
+
+.allevents__header{
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center; 
+}
+.allevents__header > h1 {
+    font-size: 3rem;
+}
+
+.allevents__header > a {
+    color:white;
+}
+.allevents__addIcon{
+    color:white;
+}
+
+
+.allevents__createEvent {
+    display: flex;
+    align-items: center;
+    font-size: 1rem;
+}
+
+.allevents__appdesc {
+    text-align: ce;
+    width: 50%;
+}
