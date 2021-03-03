@@ -25,7 +25,7 @@ const AllEvents = () => {
                 </div>
             </div>
 
-            <div>
+            <div className="allevents__eventCards">
                 <EventCards/>
             </div>
         </div>

@@ -8,11 +8,11 @@
 }
 
 .eventcard__container{
-    border: 2px solid white;
+   
     border-radius: 10px;
     width: 20rem;
     height: 10rem;
-    margin-top: 1rem
+    margin-top: 3rem
 }
 
 .eventcard__title {
@@ -24,4 +24,24 @@
 
 .eventcard__title > h1{
     margin-left: 0.5rem
+}
+
+.eventcard__desc {
+    margin: 0.5rem;
+    overflow: scroll;
+    height: 5rem;
+    color: #1167b1;
+}
+
+.eventcard__descBorder {
+    border: 2px solid #94C1E6;
+}
+
+.eventcard__footer {
+    padding: 0.1rem 1rem;
+    background-color: #94C1E6;
+    color: white;
+    border-radius: 0 0 10px 10px;
+    display: flex;
+    justify-content: space-between;
 }

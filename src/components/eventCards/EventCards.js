@@ -25,6 +25,15 @@ const EventCards = () => {
                     <div className="eventcard__title">
                         <h1>{e.title}</h1>
                     </div>
+                    <div className="eventcard__descBorder">
+                    <div className="eventcard__desc">
+                        <p>{e.description}</p>
+                    </div>
+                    </div>
+                    <div className="eventcard__footer">
+                        <p>{e.organization}</p>
+                        <p>{e.StartDate}</p>
+                    </div>
 
                 </div>
             ))}

@@ -1,6 +1,6 @@
 .allevents{
     background-color: #e7eff6 ;
-    height: 200vh;
+
   }
   
 .allevents__headerContainer {
@@ -37,4 +37,8 @@
 .allevents__appdesc {
     text-align: ce;
     width: 50%;
+}
+
+.allevents__eventCards {
+    padding: 1rem 0 5rem 0;
 }
