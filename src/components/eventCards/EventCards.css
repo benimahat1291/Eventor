@@ -1,23 +1,23 @@
 .eventcards {
     display: flex;
-    justify-content: space-between;
     align-content: center;
+    justify-content: center;
     flex-wrap: wrap;
-    width: 80%;
-    margin: auto;
+
 }
 
 .eventcard__container{
-   
     border-radius: 10px;
     width: 20rem;
     height: 10rem;
-    margin-top: 3rem
+    margin-top: 3rem; 
+    margin-left: 2rem;
+
 }
 
 .eventcard__title {
     font-size: 0.8rem;
-    background-color: #94C1E6;
+    background-color: #1167b1;
     color: white;
     border-radius: 10px 10px 0 0 ;
 }
@@ -34,14 +34,30 @@
 }
 
 .eventcard__descBorder {
-    border: 2px solid #94C1E6;
+    border: 2px solid #1167b1;
 }
 
 .eventcard__footer {
     padding: 0.1rem 1rem;
-    background-color: #94C1E6;
+    background-color: #1167b1;
     color: white;
     border-radius: 0 0 10px 10px;
     display: flex;
     justify-content: space-between;
+}
+
+.eventcard__hide {
+    display: none;
+}
+
+.eventcards__closeIcon { 
+    display: flex;
+    justify-content: flex-end;
+    width: 95%;
+   
+}
+
+.eventcards__closeIcon{ 
+    color: #1167b1;
+   
 }

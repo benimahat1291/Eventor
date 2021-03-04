@@ -4,8 +4,10 @@
   }
   
 .allevents__headerContainer {
-    background-color: #94C1E6;
-    padding: 5rem;
+    background-color: #1167b1;
+    margin-top: 3rem;
+    padding: 1rem;
+    padding-bottom: 0;
     z-index: -100;
 }
 
@@ -39,6 +41,31 @@
     width: 50%;
 }
 
+.allevents__searchBar {
+    display: flex;
+    justify-content: center;
+    padding: 3rem 0 1rem 0;
+}
+.allevents__searchBar > input {
+  border: none;
+  border-radius: 20px;
+  color: #4b86b4 ;
+  font-size: 1rem;
+  padding: 1rem;
+  width: 15rem;
+  height: 1rem;
+}
+
+::-webkit-input-placeholder {
+    color: #4b86b4;
+}
+
 .allevents__eventCards {
     padding: 1rem 0 5rem 0;
 }
+
+
+
+
+
+

@@ -3,7 +3,7 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    background-color: #e7eff6 ;
+    background-color: #1167b1 ;
     position: sticky;
     top: 0;
     z-index: 100;
@@ -14,7 +14,7 @@
     font-size: 30px;
     font-weight: bold;
     padding-left: 3rem;
-    color: #1167b1 ;
+    color: white ;
     text-decoration: none;
 }
 
@@ -29,11 +29,11 @@
 
 .nav__right > a {
     text-decoration: none;
-    color: #4b86b4;
+    color: white;
     padding-right: 2vw;
 }
 
 .nav__logout {
-    color: #4b86b4;
+    color: white;
     font-weight: bold;
 }

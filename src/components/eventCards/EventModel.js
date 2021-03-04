@@ -2,15 +2,13 @@ import React, { useState, useEffect } from 'react'
 import { Link, Route } from "react-router-dom"
 import API from "../../utils/API"
 import { useHistory } from "react-router-dom"
-import "./Event.css"
+import "./EventModel.css"
 import Sessions from '../sessions/Sessions'
 
-const Event = ({event}) => {
+const Event = ({eventId}) => {
 
     const history = useHistory();
     const [eventInfo, setEventInfo] = useState([])
-    const urlArray = window.location.href.split("/")
-    let eventId = urlArray[urlArray.length - 1]
 
 
 
@@ -46,17 +44,6 @@ const Event = ({event}) => {
             <div className="event__container">
                 <div className="event__title">
                     <h1>{eventInfo.title}</h1>
-                    <div className="event__titleOptions">
-                        <Link to={`edit/${eventInfo._id}`}>
-                            <p>Edit</p>
-                        </Link>
-                        <p>|</p>
-                        <div className="event__titleDelete" onClick={() => handleDelete(eventInfo._id)}>
-                            <p>Delete</p>
-                        </div>
-
-
-                    </div>
                 </div>
                 <div className="event__info">
                     <h3 className="event__desc">{eventInfo.description}</h3>
