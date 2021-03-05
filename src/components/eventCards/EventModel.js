@@ -32,6 +32,14 @@ const Event = ({eventId}) => {
         }
     }
 
+    const addToWatchlist = (confId) => {
+        console.log("from component")
+        const email = { email: user.email }
+        API.updateRegisteredById(confId, email).then(() => {
+            alert("Added to Watchlist")
+        })
+    }
+
 
     console.log("eventinfo", eventInfo)
 
@@ -56,7 +64,7 @@ const Event = ({eventId}) => {
                         </div>
                         </>
                         :
-                        <div className="event__titleDelete" onClick="">
+                        <div className="event__titleDelete" onClick={() => addToWatchlist(eventInfo._id)}>
                         <p>Add to Watchlist</p>
                     </div>
                         }               

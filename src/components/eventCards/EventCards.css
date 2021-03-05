@@ -1,8 +1,9 @@
 .eventcards {
     display: flex;
-    align-content: center;
+
     justify-content: center;
     flex-wrap: wrap;
+    height: 30rem;
 
 }
 
@@ -60,7 +61,17 @@
 }
 
 .eventcards__tabs {
+    margin-top: 2rem;
     display: flex;
     justify-content: space-around;
     border-bottom: 2px solid white;
+    color:  #1167b1;
+}
+
+.activeTab > h1 {
+    font-weight: bold;
+}
+
+.nonActiveTab > h1{
+    font-weight: lighter;
 }
