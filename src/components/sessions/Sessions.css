@@ -21,6 +21,10 @@
     align-items: center;
 }
 
+.sessions__closeIcon {
+    font-size: 0.5rem;
+}
+
 .sessions__addSession:hover {
     cursor: pointer;
     font-weight: bolder;

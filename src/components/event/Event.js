@@ -87,7 +87,7 @@ const Event = ({event}) => {
 
                 <div className="event__sessions">
 
-                    <Sessions eventId={eventInfo._id} />
+                    <Sessions eventId={eventInfo} />
 
                 </div>
             </div>

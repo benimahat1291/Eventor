@@ -6,7 +6,7 @@ import EventIcon from '@material-ui/icons/Event';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import "./Session.css"
 
-const Session = ({ eventId }) => {
+const Session = ( eventId ) => {
     let sesEventId = eventId.eventId
     const history = useHistory();
     const [sessArr, setSessArr] = useState([]);

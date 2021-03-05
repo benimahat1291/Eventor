@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { Link, Route } from "react-router-dom"
 import API from "../../utils/API"
 import { useHistory } from "react-router-dom"
+import { useAuth0 } from "@auth0/auth0-react"
 import "./EventModel.css"
 import Sessions from '../sessions/Sessions'
 
@@ -9,8 +10,7 @@ const Event = ({eventId}) => {
 
     const history = useHistory();
     const [eventInfo, setEventInfo] = useState([])
-
-
+    const { user, isAuthenticated } = useAuth0();
 
 
     useEffect(() => {
@@ -40,10 +40,27 @@ const Event = ({eventId}) => {
 
 
     return (
-        <div className="event">
-            <div className="event__container">
+        <div className="event" id="eventModel">
+            <div className="event__container" >
                 <div className="event__title">
                     <h1>{eventInfo.title}</h1>
+                    <div className="event__titleOptions">
+                        {user.email === eventInfo.email ?
+                        <>
+                        <Link to={`yourevents/edit/${eventInfo._id}`}>
+                            <p>Edit</p>
+                        </Link>
+                        <p>|</p>
+                        <div className="event__titleDelete" onClick={() => handleDelete(eventInfo._id)}>
+                            <p>Delete</p>
+                        </div>
+                        </>
+                        :
+                        <div className="event__titleDelete" onClick="">
+                        <p>Add to Watchlist</p>
+                    </div>
+                        }               
+                    </div>
                 </div>
                 <div className="event__info">
                     <h3 className="event__desc">{eventInfo.description}</h3>
@@ -74,7 +91,7 @@ const Event = ({eventId}) => {
 
                 <div className="event__sessions">
 
-                    <Sessions eventId={eventInfo._id} />
+                    <Sessions eventId={eventInfo} />
 
                 </div>
             </div>
