@@ -52,7 +52,6 @@
 
 .event__info {
    display: flex;
-   flex-wrap: wrap;
    justify-content: space-around;
    /* align-items: center; */
 }
@@ -63,7 +62,7 @@
     text-align: justify;
     font-weight: lighter;
     overflow: scroll;
-    width: 60vw;
+    width: 80%;
     height: 12rem;
     margin: 0.5rem;
 }

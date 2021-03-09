@@ -10,27 +10,29 @@ const NewSession = ({eventId}) => {
 
     let [formObject, setFormObject] = useState([])
     const history = useHistory();
-    const confId = eventId.eventId
+
     // let urlArray = window.location.href.split("/")
 	// const confId = urlArray[urlArray.length - 1]
+    console.log(eventId)
 
     useEffect(()=> {
         // urlArray = window.location.href.split("/")
-        console.log("newSess", confId)
+        console.log("newSess", eventId)
         setFormObject([])
-    }, [confId])
+    }, [eventId])
 
     console.log(formObject)
 
     const handleInputChange = (e) => {
         setFormObject({...formObject, [e.target.name]: e.target.value})
     }
-
+    
     const handleFormSubmit = (e) => {
         e.preventDefault();
-        API.saveSession({...formObject, confId: confId})
-            .then(setTimeout(()=>(history.push(`/editsuccess/${confId}`)),2000))
+              API.saveSession({...formObject, confId: eventId})
+            .then(setTimeout(()=>(history.push(`/editsuccess/${eventId}`)),2000))
             .catch(err => console.log(err))
+      
     }
 
 

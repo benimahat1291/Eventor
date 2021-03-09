@@ -12,6 +12,7 @@ import NewEvent from "../../components/event/NewEvent"
 import EditEvent from "../../components/event/EditEvent"
 import EditSession from "../../components/sessions/EditSession"
 
+
 const Home = () => {
     const { user, isAuthenticated } = useAuth0();
     const [userEvents, setUserEvents] = useState([])
@@ -54,6 +55,7 @@ const Home = () => {
                 <div className="home__container">
                     <div className="home__left">
                         <EventTab events={userEvents} />
+                        
                     </div>
                         <Route exact path={"/yourevents"}>
                             <div className="home__right">

@@ -10,15 +10,31 @@ import "./EventCards.css"
 const EventCards = ({ events }) => {
 
 
-    const [eventArr, setEventArr] = useState(events)
+    let [eventArr, setEventArr] = useState(events)
     const [eventId, setEventId] = useState(null)
     let [activeTab, setActiveTab] = useState("allEvents")
     const { user, isAuthenticated } = useAuth0();
     const [watchlist, setWatchlist] = useState([])
 
-    const setActiveArr = (value) => {
-        setActiveTab(value)
-        if (activeTab === "allEvents") {
+    
+    
+    useEffect(() => {
+        
+        API.getAttConference(user.email).then(resp => {
+            const attArr = resp.data
+            console.log(attArr)
+            const sortedAtt = attArr.sort((a, b) => (a.StartDate > b.StartDate) ? 1 : -1);
+            setWatchlist(sortedAtt);
+        })
+        setEventArr(events)
+    }, [events])
+
+    useEffect(()=> {
+        handleActiveArr()
+    },[activeTab])
+    
+    const handleActiveArr = () => {
+        if(activeTab === "allEvents") {
             setEventArr(events)
         } else if (activeTab === "watchList") {
             setEventArr(watchlist)
@@ -33,19 +49,6 @@ const EventCards = ({ events }) => {
             setEventId(eId)
         }
     }
-
-    useEffect(() => {
-        API.getAttConference(user.email).then(resp => {
-            const attArr = resp.data
-            console.log(attArr)
-            const sortedAtt = attArr.sort((a, b) => (a.StartDate > b.StartDate) ? 1 : -1);
-            setWatchlist(sortedAtt);
-        })
-        setActiveArr("allEvents")
-        return setEventArr(events)
-        
-    }, [])
-    
     
 
     return (
@@ -60,16 +63,15 @@ const EventCards = ({ events }) => {
                 </div>
             }
             <div className="eventcards__tabs">
-                <div onClick={()=> setActiveArr("allEvents")} className={activeTab === "allEvents" ? "activeTab" : "nonActiveTab"}>
+                <div onClick={()=> setActiveTab("allEvents")} className={activeTab === "allEvents" ? "activeTab" : "nonActiveTab"}>
                     <h1>All Events</h1>
                 </div>
-                <div onClick={()=> setActiveArr("watchList")} className={activeTab === "watchList" ? `activeTab` : `nonActiveTab`}>
+                <div onClick={()=> setActiveTab("watchList")} className={activeTab === "watchList" ? `activeTab` : `nonActiveTab`}>
                     <h1>WatchList</h1>
                 </div>
             </div>
             <div className="eventcards">
                 {eventArr.map(e => (
-                    <>
                         <Link to="eventModel" spy={true} smooth={true} offset={-190} duration={500}>
                             <div onClick={() => handleEventDisplay(e._id)} className="eventcard__container">
                                 <div className="eventcard__title">
@@ -86,7 +88,6 @@ const EventCards = ({ events }) => {
                                 </div>
                             </div>
                         </Link>
-                    </>
                 ))}
 
 
