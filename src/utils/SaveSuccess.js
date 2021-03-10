@@ -19,8 +19,7 @@ const SaveSuccess = () => {
     
     return (
         <div>
-           
-        ({confId !== ""? <Redirect to={`/yourevents/${confId}`} />:null })
+        ({confId !== ""? <Redirect to={`yourevents/${confId}`} />:null })
         </div>
     )
 }

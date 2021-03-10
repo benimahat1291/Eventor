@@ -2,13 +2,9 @@
     padding: 3rem;
     overflow: scroll;
 }
-.confName {
-    height: 2rem;
-    width: 15rem;
-}
 
 .EventForm {
-    height: 70vh;
+    height: 75vh;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,21 +22,10 @@
     color: #1167b1;
 }
 
-.form__input {
-    height: 2rem;
-    width: 20rem;
-    margin: 1rem 0rem;
-    padding-left: 2rem;
-    border: none;
-    text-decoration: none;
-    border-radius: 25px;
-    background: white;
-    color: #03254c;
-    font-size: 1rem;
-}
+
 
 .EventForm__nameInput {
-    width:50%;
+    width:25rem;
     height: 3rem;
     margin: 1rem 0rem;
     padding-left: 2rem;
@@ -54,14 +39,16 @@
 .EventForm__organization {
     display: flex;
     flex-direction: column;
+    margin-right: 2rem;
+    width: 23rem;
 }
 
 
 
 .EventForm__organizationInput {
     height: 2rem;
-    width: 20vw;
-    margin-top: 1rem;
+    width: 20rem;
+    margin: 1rem 0;
     padding-left: 2rem;
     border: none;
     text-decoration: none;
@@ -80,13 +67,15 @@ textarea:focus {
 
 .NewEvent__date {
   display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  width: 50%;
 }
 
 
 .NewEvent__startDate {
     display: flex;   
     flex-direction: column;
-    margin-left: 3rem;
 }
 
 .NewEvent__dateInput {
@@ -106,11 +95,12 @@ textarea:focus {
 .NewEvent__endDate {
     display: flex;   
     flex-direction: column;
-    margin-left: 3rem;
 }
 
 .EventForm__orgDate {
     display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
 }
 
 .NewEvent__description {
@@ -133,28 +123,32 @@ textarea:focus {
 
 .NewEvent__locationRow {
     display: flex;
+    flex-wrap: wrap;
 }
 
 .NewEvent__radio {
+    width: 15rem;
     display: flex;
     flex-direction: column;
+    flex-wrap: wrap;
 }
 
 
 .NewEvent__radioOptions {
     display: flex;
-    margin-top: 1rem;
+    margin: 1rem 0 1rem 1rem;
     }
+
 .NewEvent__radioOption {
-    margin: 0.5rem 1rem 0 0;
+    margin: 0 1rem 0 0;
 }
 
 
 
 .NewEvent__location {
+    width: 20rem;
     display: flex;
     flex-direction: column;
-    margin-left: 3rem;
 }
 
 
@@ -184,3 +178,28 @@ textarea:focus {
     font-size: 2rem;
 }
 
+@media only screen and (max-width: 537px) {
+    .newevent{
+        padding: 2rem
+    }
+    
+.EventForm__nameInput {
+    width:90%;
+}
+.EventForm__organizationInput {
+    width: 100%;
+}
+.NewEvent__location {
+    width: 100%;
+}
+.NewEvent__locationInput {
+    width: 90%;
+}
+.NewEvent__radio {
+    width: 100%;
+}
+.NewEvent__radioOption {
+    margin: 0 5rem 0 0;
+}
+
+  }

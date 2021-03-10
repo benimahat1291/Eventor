@@ -26,7 +26,7 @@ const AllEvents = () => {
 
     return (
         <div className="allevents">
-            <div className="allevents__headerContainer">
+            {/* <div className="allevents__headerContainer">
                 <div className="allevents__header">
                     <h1>Welcome to Eventor</h1>
                     <Link to="/yourevents/create/newevent">
@@ -40,14 +40,15 @@ const AllEvents = () => {
                     <div className="allevents__appdesc">
                         <p>Use Eventor to create and organization detialed events which may span mulitple days and include mulitple sessions. Also browse events that others have created and show your interest</p>
                     </div>
-                <div className="allevents__searchBar">
-                    <input type="text" placeholder="Search for Event" value={search} onChange={(e) => setSearch(e.target.value)}></input>
                 </div>
-                </div>
-            </div>
+            </div> */}
 
             <div className="allevents__eventCards">
                 <EventCards events={searchFilter(events.slice(0, Math.ceil(events.length)))} />
+            </div>
+
+            <div className="allevents__searchBar">
+                <input type="text" placeholder="Search for Event" value={search} onChange={(e) => setSearch(e.target.value)}></input>
             </div>
         </div>
     )

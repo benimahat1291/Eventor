@@ -1,4 +1,4 @@
-.sidebar {
+/* .sidebar {
     background-color: blue;
     height: 100px;
     display: flex;
@@ -68,4 +68,48 @@
 
 span {
     margin-left: 16px;
+} */
+
+
+/* /////////////////////////////// */
+
+.sidebar__close{
+    display: none;
 }
+
+.sidebar__title {
+    display: block;
+    font-size: 2rem;
+}
+.sidebar__drawer{
+    height: 100vh;
+    overflow: scroll;
+}
+
+/* .sidebar__nav{
+    margin-left: 1rem;
+    width: 100vw;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+} */
+
+.sidebar__navtitle {
+    font-size: 2rem;
+    margin-left: 1rem;
+}
+
+.sidebar__navlogout {
+    font-size: 1.3rem;
+    margin-right: 1rem;
+    color: white;
+}
+
+@media only screen and (max-width: 768px) {
+    .sidebar__close{
+        display: block;
+    }
+    .sidebar__title {
+        display: none;
+    }
+  }

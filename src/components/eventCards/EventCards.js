@@ -27,7 +27,8 @@ const EventCards = ({ events }) => {
             setWatchlist(sortedAtt);
         })
         setEventArr(events)
-    }, [events])
+        setEventId("")
+    }, [events, activeTab])
 
     useEffect(()=> {
         handleActiveArr()
@@ -54,14 +55,7 @@ const EventCards = ({ events }) => {
     return (
         <>
 
-            {eventId &&
-                <div className="eventcards__model">
-                    <div className="eventcards__closeIcon">
-                        <HighlightOffIcon onClick={() => setEventId(null)} className="eventcards__closeIcon" />
-                    </div>
-                    <EventModel eventId={eventId} />
-                </div>
-            }
+
             <div className="eventcards__tabs">
                 <div onClick={()=> setActiveTab("allEvents")} className={activeTab === "allEvents" ? "activeTab" : "nonActiveTab"}>
                     <h1>All Events</h1>
@@ -70,7 +64,16 @@ const EventCards = ({ events }) => {
                     <h1>WatchList</h1>
                 </div>
             </div>
-            <div className="eventcards">
+            {eventId ?
+                <div className="eventcards__model">
+                    <div className="eventcards__closeIcon">
+                        <HighlightOffIcon onClick={() => setEventId(null)} className="eventcards__closeIcon" />
+                    </div>
+                    <EventModel eventId={eventId} />
+                </div>
+
+                :
+                <div className="eventcards">
                 {eventArr.map(e => (
                         <Link to="eventModel" spy={true} smooth={true} offset={-190} duration={500}>
                             <div onClick={() => handleEventDisplay(e._id)} className="eventcard__container">
@@ -92,6 +95,8 @@ const EventCards = ({ events }) => {
 
 
             </div>
+            }
+
         </>
     )
 }

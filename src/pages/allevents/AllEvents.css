@@ -1,4 +1,6 @@
 .allevents{
+    /* margin-top: 120px; */
+    margin-left: 250px;
     background-color: #e7eff6 ;
 
   }
@@ -6,8 +8,7 @@
 .allevents__headerContainer {
     background-color: #1167b1;
     margin-top: 3rem;
-    padding: 1rem;
-    padding-bottom: 0;
+    padding: 2rem;
 }
 
 .allevents__header{
@@ -41,9 +42,14 @@
 }
 
 .allevents__searchBar {
+    position: fixed;
+    top: 90vh;
+    left: 8vw;
+    width: 100%;
     display: flex;
     justify-content: center;
-    padding: 3rem 0 1rem 0;
+    padding: 1rem 0 1rem 0;
+    background: #414757;
 }
 .allevents__searchBar > input {
   border: none;
@@ -60,10 +66,20 @@
 }
 
 .allevents__eventCards {
-    padding: 1rem 0 5rem 0;
+    padding: 5rem 0;
 }
 
 
+@media only screen and (max-width: 768px) {
+    .allevents {
+        margin-left: 0px;
+  }
+  
+  .allevents__searchBar {
+    left: 0vh;
+}
+
+}
 
 
 

@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 import API from "../../utils/API"
 import { useAuth0 } from "@auth0/auth0-react";
+import "./Sidebar.css"
 
 const SidebarLink = styled(Link)`
   display: flex;
@@ -15,6 +16,7 @@ const SidebarLink = styled(Link)`
   text-decoration: none;
   font-size: 18px;
 
+
   &:hover {
     background: #252831;
     border-left: 4px solid #632ce4;
@@ -23,7 +25,13 @@ const SidebarLink = styled(Link)`
 `;
 
 const SidebarLabel = styled.span`
-  margin-left: 16px;
+  margin-left: 10px;
+  overflow-x: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  width: 154px;
+ 
+
 `;
 
 const DropdownLink = styled(Link)`
@@ -33,9 +41,9 @@ const DropdownLink = styled(Link)`
   display: flex;
   align-items: center;
   text-decoration: none;
+  text-overflow: ellipsis;
   color: #f5f5f5;
   font-size: 18px;
-
   &:hover {
     background: #632ce4;
     cursor: pointer;
@@ -45,7 +53,10 @@ const DropdownLink = styled(Link)`
 const SubMenu = ({ item }) => {
     const { user, isAuthenticated } = useAuth0();
     const [userEvents, setUserEvents] = useState([])
-    // let [refresh, setRefresh] = useState("1")
+
+    const [subnav, setSubnav] = useState(false);
+
+    const showSubnav = () => setSubnav(!subnav);
 
     useEffect(() => {
         API.getConferencebyUser(user.email).then(resp => {
@@ -54,38 +65,36 @@ const SubMenu = ({ item }) => {
             const sortedArr = tempArr.sort((a, b) => (a.StartDate > b.StartDate) ? 1 : -1);
             setUserEvents(sortedArr);
         })
-    },[])
+    }, [subnav])
 
-  const [subnav, setSubnav] = useState(false);
-
-  const showSubnav = () => setSubnav(!subnav);
-
-  return (
-    <>
-      <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
-        <div>
-          {item.icon}
-          <SidebarLabel>{item.title}</SidebarLabel>
-        </div>
-        <div>
-          {item.subNav && subnav
-            ? item.iconOpened
-            : item.subNav
-            ? item.iconClosed
-            : null}
-        </div>
-      </SidebarLink>
-      {subnav &&
-        userEvents.map((e) => {
-          return (
-            <DropdownLink to={`/yourevents/${e._id}`} key={e._id}>
-              {item.icon}
-              <SidebarLabel>{e.title}</SidebarLabel>
-            </DropdownLink>
-          );
-        })}
-    </>
-  );
+    return (
+        <>
+            <SidebarLink to={item.path} onClick={item.subNav && showSubnav}>
+                <div>
+                    {item.icon}
+                    <SidebarLabel>{item.title}</SidebarLabel>
+                </div>
+                <div>
+                    {item.subNav && subnav
+                        ? item.iconOpened
+                        : item.subNav
+                            ? item.iconClosed
+                            : null}
+                </div>
+            </SidebarLink>
+            <div className="sidebar__submenu">
+                {subnav &&
+                    userEvents.map((e) => {
+                        return (
+                            <DropdownLink to={`/yourevents/${e._id}`} key={e._id}>
+                                {item.icon}
+                                <SidebarLabel>{e.title}</SidebarLabel>
+                            </DropdownLink>
+                        );
+                    })}
+            </div>
+        </>
+    );
 };
 
 export default SubMenu;
