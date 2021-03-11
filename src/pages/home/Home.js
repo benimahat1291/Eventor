@@ -53,10 +53,6 @@ const Home = () => {
 
             <div className="home">
                 <div className="home__container">
-                    <div className="home__left">
-                        <EventTab events={userEvents} />
-                        
-                    </div>
                         <Route exact path={"/yourevents"}>
                             <div className="home__right">
                                 <Link to="/yourevents/create/newevent">
