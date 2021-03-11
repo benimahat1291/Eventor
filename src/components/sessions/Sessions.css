@@ -15,10 +15,11 @@
 }
 
 .sessions__addSession {
-    width: 10vw;
+    width: 15rem;
     display: flex;
-    justify-content: space-evenly;
+    justify-content: flex-end;
     align-items: center;
+    margin-right: 1rem;
 }
 
 .sessions__closeIcon {

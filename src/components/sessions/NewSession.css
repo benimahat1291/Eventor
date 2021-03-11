@@ -8,19 +8,21 @@
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 1rem;
+    background-color: #e7eff6;
 
 }
 
 .newSession__times {
     display: flex;
-    justify-content: space-evenly;
-    width: 80%;
+    justify-content: space-between;
+    width: 85%;
+    margin: auto;
 
 }
 
 .form__time {
     height: 2rem;
-    width: rem;
+    width: 50%;
     margin: 1rem;
     padding-left: 2rem;
     border: none;

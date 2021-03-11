@@ -1,10 +1,7 @@
-.session {
-
-}
 
 .session__card {
   padding: 1rem 2rem;
-  border-top: 2px solid white;
+  border-top: 2px solid #e7eff6;;
   font-size: 0.8rem;
   color: #1167b1;
 }
@@ -12,13 +9,14 @@
 .session__cardRow {
     display: flex;
     justify-content: space-between;
-
+    /* flex-wrap: wrap; */
 }
 
 .session__cardCol {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    flex-wrap: wrap;
 
 }
 
@@ -29,7 +27,12 @@
 .session__cardTitle {
     font-weight: normal;
     font-size: 1.5rem;
-    width: 10rem;
+    width: 15rem;
+    overflow: scroll;
+    text-decoration: none;
+    text-overflow: clip;
+    white-space: nowrap;
+
 }
 
 .session__Date {
@@ -53,28 +56,30 @@
 
  .session__Presenter > .MuiSvgIcon-root {
     width: 2rem;
-    color: wif;
+    color: #4b86b4;
     margin-right: 1rem;
 }
 .session__Date > .MuiSvgIcon-root {
     width: 2rem;
-    color: white;
+    color: #4b86b4;
     margin-right: 1rem;
 }
 .session__Times > .MuiSvgIcon-root {
     width: 2rem;
-    color: white;
+    color: #4b86b4;
     margin-right: 1rem;
 }
 
 .session__infoCol {
     display: flex;
     flex-direction: column;
+    width: 10rem;
 }
 .session__infoRow{
-    display: flex;
+    display: none;
     justify-content: space-evenly;
     width: 100%;
+    /* flex-wrap: wrap; */
 }
 
 .session__desc::-webkit-scrollbar {
@@ -82,17 +87,27 @@
   }
 
 .session__descShow {
-    width: 19rem;
+    width: 20rem;
     align-self: center;
     font-size: larger;
-    padding: 0rem 3rem;
+    margin-right: 1rem;
+    height: 7rem;
+    overflow: scroll;
+    text-align: left;
 }
 
-.session__desc {
-    height: 8rem;
-    overflow: scroll;
-    text-align: justify;
+.session__left {
+    display: flex;
+    justify-content: space-between;
+    width: 40rem;
+    flex-wrap: wrap;
+}
 
+.session__right{
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+    width: 20rem;
 }
 
 .session__Hide {
@@ -101,9 +116,56 @@
 
 .session__edit {
   margin-top: 1rem;
-  font-weight: normal;
+  font-weight: bold;
+  color: black
 }
+
+a > h4 {
+    font-weight: bold;
+    color: black
+}
+
 .session__edit:hover {
    font-weight: bolder;
    cursor: pointer;
+  }
+
+  .session__options {
+      display: flex;
+      flex-direction: column;
+  }
+
+  @media only screen and (max-width: 1273px) {
+    .session__options {
+        flex-direction: row;
+        width: 100%;
+        justify-content: space-evenly;
+        
+    }
+    .session__descShow {
+        width: 30vw;
+    }
+  }
+
+  @media only screen and (max-width: 768px) {
+    .session__descShow {
+        margin-top: 1rem;
+        width: 100%;
+    }
+    .session__cardRow {
+        flex-wrap: wrap;
+    }
+    .session__options {
+        flex-direction: column;
+        width: 20%;
+        justify-content: space-evenly;
+        
+    }
+    .session__right{
+        display: flex;
+        justify-content: space-evenly;
+        width: 100%;
+    }
+    
+    
   }

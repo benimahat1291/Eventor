@@ -1,12 +1,12 @@
 import React, { useState, useEffect } from 'react'
 import API from "../../utils/API"
-import {Link, useHistory} from "react-router-dom"
+import { Link, useHistory } from "react-router-dom"
 import PersonIcon from '@material-ui/icons/Person';
 import EventIcon from '@material-ui/icons/Event';
 import ScheduleIcon from '@material-ui/icons/Schedule';
 import "./Session.css"
 
-const Session = ( eventId ) => {
+const Session = (eventId) => {
     let sesEventId = eventId.eventId
     const history = useHistory();
     const [sessArr, setSessArr] = useState([]);
@@ -32,9 +32,9 @@ const Session = ( eventId ) => {
     }
 
     const handleDelete = (sessionId) => {
-        if(window.confirm("Are you sure you want to delete?")){
-           API.deleteSession(sessionId)
-           .then(setTimeout(()=>(history.push(`/editsuccess/${sesEventId}`)),2000))
+        if (window.confirm("Are you sure you want to delete?")) {
+            API.deleteSession(sessionId)
+                .then(setTimeout(() => (history.push(`/editsuccess/${sesEventId}`)), 2000))
         } else {
             return
         }
@@ -50,7 +50,16 @@ const Session = ( eventId ) => {
 
                     <div onClick={() => handleInfoDisplay(e._id)} key={e._id} className="session__card">
                         <div className="session__cardRow">
-                            <h1 className="session__cardTitle">{e.sessName}</h1>
+                            <div className="session__left">
+                                <h1 className="session__cardTitle">{e.sessName}</h1>
+                                <div className={infoDisplay === e._id ? `session__descShow` : `session__Hide`}>
+                                    <p className="session__desc">
+                                        {e.sessDesc}
+                                    </p>
+                                </div>
+
+                            </div>
+                            <div className="session__right">
                             <div className={infoDisplay === e._id ? `session__infoCol` : `session__infoRow`}>
                                 <div className="session__Presenter">
                                     <PersonIcon />
@@ -67,17 +76,13 @@ const Session = ( eventId ) => {
                                     <span>{e.startTime}</span>
                                 </div>
                             </div>
-                            <div className={infoDisplay === e._id ? `session__descShow` : `session__Hide`}>
-                                <p className="session__desc">
-                                    {e.sessDesc}
-                                </p>
 
+                            <div className="session__options">
+                                <h4 onClick={() => handleDelete(e._id)} className={infoDisplay === e._id ? `session__edit` : `session__Hide`}>Delete</h4>
+                                <Link to={`editsession/${e._id}`}>
+                                    <h4 className={infoDisplay === e._id ? `session__edit` : `session__Hide`}>Edit</h4>
+                                </Link>
                             </div>
-                            <div>
-                            <h4 onClick={() => handleDelete(e._id)} className={infoDisplay === e._id ? `session__edit` : `session__Hide`}>Delete</h4>
-                            <Link to={`editsession/${e._id}`}>
-                            <h4 className={infoDisplay === e._id ? `session__edit` : `session__Hide`}>Edit</h4>
-                            </Link>
                             </div>
                         </div>
 

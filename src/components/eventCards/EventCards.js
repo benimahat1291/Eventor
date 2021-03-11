@@ -86,8 +86,8 @@ const EventCards = ({ events }) => {
                                     </div>
                                 </div>
                                 <div className="eventcard__footer">
-                                    <p>{e.organization}</p>
-                                    <p>{e.StartDate}</p>
+                                    <p className="eventcard__org">{e.organization}</p>
+                                    <p className="eventcard__date">{e.StartDate}</p>
                                 </div>
                             </div>
                         </Link>
