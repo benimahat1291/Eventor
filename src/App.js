@@ -22,9 +22,9 @@ function App() {
             <div className="eventor__app">
 
 
+                    {!isAuthenticated && <Route path="/" component={Login} />}
                 <Switch>
                     {/* <Navbar /> */}
-                    {!isAuthenticated && <Route path="/" component={Login} />}
                     {isAuthenticated &&
                         <div>
                             <Sidebar />
