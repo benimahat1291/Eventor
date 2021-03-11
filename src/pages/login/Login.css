@@ -48,10 +48,11 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    background: white;
+    background: none;
+    color:  white ;
+
     font-size: 20px;
     font-weight: bold;
-    color:  #1167b1 ;
     margin-top: 3vh;
     border-width: 0px;
     border-radius: 25px;
@@ -59,6 +60,14 @@
     width: 15rem;
     z-index: 100;
 }
+
+.loginBtn:hover {
+    background: white;
+    color:  #1167b1 ;
+    cursor: pointer;
+
+}
+
 
 @media only screen and (max-width: 768px) {
     
