@@ -213,5 +213,13 @@ textarea:focus {
 .NewEvent__radioOption {
     margin: 0 5rem 0 0;
 }
+.EventForm {
+    height: 50rem;
+}
+.newevent {
+
+    height: 50rem;
+
+}
 
   }

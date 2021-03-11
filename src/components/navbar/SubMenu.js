@@ -54,10 +54,10 @@ const SubMenu = ({ item }) => {
     const { user, isAuthenticated } = useAuth0();
     const [userEvents, setUserEvents] = useState([])
 
-    const [subnav, setSubnav] = useState(false);
-
-    const showSubnav = () => setSubnav(!subnav);
-
+    
+        const [subnav, setSubnav] = useState(true);
+    
+        const showSubnav = () => setSubnav(!subnav);
     useEffect(() => {
         API.getConferencebyUser(user.email).then(resp => {
             console.log("data", resp.data)
@@ -83,7 +83,7 @@ const SubMenu = ({ item }) => {
                 </div>
             </SidebarLink>
             <div className="sidebar__submenu">
-                {subnav &&
+                {item.subNav &&
                     userEvents.map((e) => {
                         return (
                             <DropdownLink to={`/yourevents/${e._id}`} key={e._id}>

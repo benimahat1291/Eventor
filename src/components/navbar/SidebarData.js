@@ -28,16 +28,7 @@ export const SidebarData = [
         iconOpened: <RiIcons.RiArrowUpSFill />,
 
         subNav: [
-            {
-                title: 'Users',
-                path: '/overview/users',
-                icon: <IoIcons.IoIosPaper />
-            },
-            {
-                title: 'Revenue',
-                path: '/overview/revenue',
-                icon: <IoIcons.IoIosPaper />
-            }
+          
         ]
     },
 
