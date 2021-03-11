@@ -132,6 +132,10 @@
     font-weight: bolder;
 }
 
+.event__location > a:-webkit-any-link {
+    color: #1167b1;
+}
+
 .event__confType{
     font-weight: lighter;
 }

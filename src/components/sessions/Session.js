@@ -71,9 +71,9 @@ const Session = (eventId) => {
                                 </div>
                                 <div className="session__Times">
                                     <ScheduleIcon />
-                                    <span>{e.endTime}</span>
-                                    <span> - </span>
                                     <span>{e.startTime}</span>
+                                    <span> - </span>
+                                    <span>{e.endTime}</span>
                                 </div>
                             </div>
 

@@ -89,7 +89,13 @@ const Event = ({eventId}) => {
                                     <h3 className="event__detailsTitle">Location</h3>
                                     <h3 className="event__detailsSubtitle event__confType">{`${eventInfo.confType}`.toUpperCase()}</h3>
                                 </div>
-                                <h3 className="event__location">{eventInfo.location}</h3>
+                                <div className="event__location">
+                                    {eventInfo === "live" ?
+                                        <a target={"_blank"} href={`https://www.google.com/maps/search/${eventInfo.location.replace(" ", "+")}`}>{eventInfo.location}</a>
+                                        :
+                                        <a target={"_blank"} href={eventInfo.location}>{eventInfo.location}</a>
+                                    }
+                                </div>
                             </div>
 
 

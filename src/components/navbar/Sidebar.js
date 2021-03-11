@@ -101,7 +101,7 @@ const Sidebar = () => {
                             <AiIcons.AiOutlineClose onClick={showSidebar} className="sidebar__close" />
                             <h2 className="sidebar__title">Eventor</h2>
                         </NavIcon>
-                        <div onClick={width < 768 && showSidebar} className="sidebar__drawer">
+                        <div onClick={width < 768 ? showSidebar : null} className="sidebar__drawer">
                             {SidebarData.map((item, index) => {
                                 return <SubMenu item={item} key={index} />;
                             })}

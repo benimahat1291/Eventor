@@ -5,7 +5,7 @@ import { useHistory } from "react-router-dom"
 import "./Event.css"
 import Sessions from '../sessions/Sessions'
 
-const Event = ({event}) => {
+const Event = ({ event }) => {
 
     const history = useHistory();
     const [eventInfo, setEventInfo] = useState([])
@@ -26,7 +26,7 @@ const Event = ({event}) => {
 
 
     function handleDelete(confId) {
-        if(window.confirm("Are you sure you want to delete this event?")){
+        if (window.confirm("Are you sure you want to delete this event?")) {
             API.deleteConference(confId)
                 .then(setTimeout(() => (history.push("/success")), 1000))
         } else {
@@ -76,8 +76,14 @@ const Event = ({event}) => {
                                 <div className="event__detailsLocationRow">
                                     <h3 className="event__detailsTitle">Location</h3>
                                     <h3 className="event__detailsSubtitle event__confType">{`${eventInfo.confType}`.toUpperCase()}</h3>
+                                </div >
+                                <div className="event__location">
+                                    {eventInfo.confType === "live" ?
+                                        <a className="event__loactionlink" target={"_blank"} href={`//www.google.com/maps/search/${eventInfo.location.replace(" ", "+")}`}>{eventInfo.location}</a>
+                                        :
+                                        <a className="event__loactionlink" target={"_blank"} href={eventInfo.location}>{eventInfo.location}</a>
+                                    }
                                 </div>
-                                <h3 className="event__location">{eventInfo.location}</h3>
                             </div>
 
 

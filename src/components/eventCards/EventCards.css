@@ -23,7 +23,7 @@
   
 
 .eventcard__title {
-    margin: 1rem 1rem;
+    margin: 1rem 1rem 0 1rem;
   font-size: 0.6rem;
   color: black;
   border-radius: 10px 10px 0 0;
@@ -44,9 +44,9 @@
 
 .eventcard__desc {
   margin: 0.5rem;
-  padding: 0.5rem 1rem;
+  padding: 0rem 1rem;
   overflow: scroll;
-  height: 5rem;
+  height: 6.5rem;
   color: black;
 
 }
@@ -88,7 +88,7 @@
 .eventcards__tabs {
   position: -webkit-sticky;
   position: sticky;
-  top: 9%;
+  top: 7%;
   background: #414757;
   padding-top: 2rem;
   display: flex;
