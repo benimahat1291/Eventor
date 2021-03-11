@@ -1,70 +1,75 @@
-# Getting Started with Create React App
+## Table of Contents
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+* [Description](#description)
+* [Links](#links)
+* [Screenshots](#screenshots)
+* [Installation](#installation)
+* [Usage](#usage)
+* [Technologies Used](#technologies)
+* [Tests](#tests)
+* [Collaborators](#collaborators)
+* [Contributing](#contributing)
+* [Questions](#questions)
 
-## Available Scripts
+## Description
 
-In the project directory, you can run:
+Welcome to Cool Cats conference planner, your conference planning home. Gone are the days of important conference details lost in a mess of scrap paper! This application is designed to be a hub for all things conference. Here you can create a conference, keep track of the necessary details, see available conferences and show interest in other users conferences.
 
-### `npm start`
+This application is powered by the MERN stack, using mongoDB to host the Back-end and React.js for the front-end framework. 
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+## Links
 
-### `npm test`
+[See the Deployed Conference Planner on Heroku](https://conference-planner-123432.herokuapp.com/)
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## Screenshots
 
-### `npm run build`
+Landing page:
+![Landing page:](client/public/images/Login.png)
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Login screen using auth0:
+![Login screen:](client/public/images/Auth.png)
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Profile page:
+![Profile page](client/public/images/Profile.png)
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Main conferences page:
+![Main conferences page](client/public/images/Conference.png)
 
-### `npm run eject`
+"Create form" page:
+!["Create session" page](client/public/images/Form.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+## Installation Instructions
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+run "npm i" in the root file of the application. 
+run "npm start" to start development server on your localhost
 
-## Learn More
+## Usage
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+This application is intended to be used to facilitate the creation and management of conventions, conferences and seminars. Simply open the application on your desired web browser, log in and you are ready to go.  
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+After logging in, the app will take you to your profile page. Here you can see your basic information and a list of the conferences you created and those conferences you are attending. Clicking the "+" button will allow you to create a new conference. The "details" button allows you to see the the details for that conference, including sessions and speakers.    
 
-### Code Splitting
+The "conferences" page allows you to search existing conferences and register for them. Upon registration, the conference will be added to your profile page.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+## Technologies Used
 
-### Analyzing the Bundle Size
+MongoDB, Express.js, React, Node.js, auth0.com
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Tests
 
-### Making a Progressive Web App
+npm run test
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+## Collaborators
 
-### Advanced Configuration
+This app was built by Beni Mahat, Anna Battista, Laura Cole, Travis Messall, Brenda Miller, and Alec Rewinkel.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## Contributing
 
-### Deployment
+We believe code is never finished, welcome your contributions to enhance the applications functionality. Please adhere to the Code of Conduct for the Contributer Covenant, version 2.0, at https://www.contributor-covenant.org/version/2/0/code_of_conduct.html.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+## Questions
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+If you have further questions, you can find us on Github: [Anna Battista](https://github.com/abattista24), [Laura Cole](https://github.com/LauraCole1900), [Beni Mahat](https://github.com/benimahat1291), [Travis Messall](https://github.com/tmessall), [Brenda Miller](https://github.com/millerbee), and [Alec Rewinkel](https://github.com/arewinkl).
