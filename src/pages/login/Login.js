@@ -14,7 +14,7 @@ const Login = () => {
                     <h1 className="login__title">EVENT0R</h1>
                     <h2 >Organize Your Next Event</h2>
 
-                    <button onClick={() => loginWithRedirect()} className="loginBtn">Log-in / Sign-up</button>
+                    <div onClick={() => loginWithRedirect()} className="loginBtn">Log-in / Sign-up</div>
                 </div>
             </div>
             <Particles id="particles-js"

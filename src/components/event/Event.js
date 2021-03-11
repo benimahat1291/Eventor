@@ -50,7 +50,7 @@ const Event = ({event}) => {
                         <Link to={`edit/${eventInfo._id}`}>
                             <p>Edit</p>
                         </Link>
-                        <p> |  </p>
+                        <p>|</p>
                         <div className="event__titleDelete" onClick={() => handleDelete(eventInfo._id)}>
                             <p>Delete</p>
                         </div>

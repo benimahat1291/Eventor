@@ -36,10 +36,14 @@
     color: lavender;
 }
 
-.login__card > button {
+.loginBtn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
     font-size: 20px;
     font-weight: bold;
-    color: gray;
+    color:  #1167b1 ;
     margin-top: 3vh;
     border-width: 0px;
     border-radius: 25px;
