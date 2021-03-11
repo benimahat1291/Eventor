@@ -21,7 +21,6 @@ function App() {
         <>
             <div className="eventor__app">
 
-
                     {!isAuthenticated && <Route path="/" component={Login} />}
                 <Switch>
                     {/* <Navbar /> */}
