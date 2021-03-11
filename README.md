@@ -20,7 +20,7 @@ This application is powered by the MERN stack, using mongoDB to host the Back-en
 
 ## Links
 
-[See the Deployed Conference Planner on Heroku](https://bit.ly/eventoreventplanner)
+[See the Deployed Eventor on Heroku](https://bit.ly/eventoreventplanner)
 
 ## Screenshots
 
