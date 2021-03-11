@@ -15,12 +15,17 @@
 
 Eventor is an event orgaization platform. Create and Event that includes mulitple sessions. See events other users have created and add to your watchlist
 
+BACKEND HOSTED ON HEROKU SERVER
+[BackEnd github REPO ](https://github.com/benimahat1291/Eventor__Backend)
+
 This application is powered by the MERN stack, using mongoDB to host the Back-end and React.js for the front-end framework. Fully Mobile Responisve so you can use it on your Phone
 
 
 ## Links
 
 [See the Deployed Eventor on Heroku](https://bit.ly/eventoreventplanner)
+
+[BackEnd github REPO ](https://github.com/benimahat1291/Eventor__Backend)
 
 ## Screenshots
 
