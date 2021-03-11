@@ -11,6 +11,7 @@ const NewEvent = () => {
     const { user, isAuthenticated } = useAuth0();
     const history = useHistory();
     let [redirect, setRedirect] = useState(false);
+    let [loading, setLoading] = useState(false)
 
     let [formObject, setFormObject] = useState({
         EndDate: "01/01/2021",
@@ -31,6 +32,7 @@ const NewEvent = () => {
 
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        setLoading(true)
         API.saveConference({ ...formObject, email: user.email })
        .then(setTimeout(()=>(history.push("/savesuccess")), 3000))
         
@@ -113,9 +115,12 @@ const NewEvent = () => {
                 </div>
 
                 {/* <Button onClick={handleFormUpdate} type="submit">Update form</Button> */}
+                {
+                    loading === false &&
                 <div>
                 <Button className="form__button" onClick={handleFormSubmit} type="submit">Create Event</Button>
                 </div>
+                }
             </Form>
 
         </div>

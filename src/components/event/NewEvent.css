@@ -1,10 +1,11 @@
 .newevent {
     padding: 3rem;
+    height: 75vh;
     overflow: scroll;
 }
 
 .EventForm {
-    height: 75vh;
+    height: 35rem;
     display: flex;
     flex-direction: column;
     justify-content: space-between;

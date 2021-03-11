@@ -10,6 +10,7 @@ const NewSession = ({eventId}) => {
 
     let [formObject, setFormObject] = useState([])
     const history = useHistory();
+    let [loading, setLoading] = useState(false)
 
     // let urlArray = window.location.href.split("/")
 	// const confId = urlArray[urlArray.length - 1]
@@ -29,6 +30,7 @@ const NewSession = ({eventId}) => {
     
     const handleFormSubmit = (e) => {
         e.preventDefault();
+        setLoading(true)
               API.saveSession({...formObject, confId: eventId})
             .then(setTimeout(()=>(history.push(`/editsuccess/${eventId}`)),2000))
             .catch(err => console.log(err))
@@ -77,7 +79,10 @@ const NewSession = ({eventId}) => {
                         <Form.Control required type="time" name="endTime" placeholder="Enter session end time" value={formObject.endTime} onChange={handleInputChange} className="form__time" />
                     </div>
                 </Form.Group>
+                {
+                    loading === false &&
                 <Button onClick={handleFormSubmit} className="form__button" type="submit">save</Button>
+                }
                 </div>
             </Form>
         </div>
