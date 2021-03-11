@@ -24,10 +24,10 @@ This application is powered by the MERN stack, using mongoDB to host the Back-en
 
 ## Screenshots
 
-![Landing page:](./public/sc1.png)
-![Seach by Country and cases:](./public/sc2.png)
-![Landing page:](./public/sc3.png)
-![Seach by Country and cases:](./public/sc4.png)
+![eventor:](./public/sc1.png)
+![mobie:](./public/sc2.png)
+![mobile:](./public/sc3.png)
+![eventor:](./public/sc4.png)
 
 
 
@@ -40,7 +40,7 @@ run "npm start" to start development server on your localhost
 
 This application is intended to be used to facilitate the creation and management of events, conferences and seminars. Simply open the application on your desired web browser, log in and you are ready to go.  
 
-After logging in, the app will take you to your profile page. Here you can see your basic information and a list of the conferences you created and those conferences you are attending. Clicking the "+" button will allow you to create a new conference. The "details" button allows you to see the the details for that conference, including sessions and speakers.    
+After logging in, the app will take you to the all events page that houses events created on this app. Here you can see your basic information and a list of the conferences you created and those conferences you are attending. Clicking the "+" button will allow you to create a new conference. The "details" button allows you to see the the details for that conference, including sessions and speakers.    
 
 The home page allows you to search existing conferences and to your watch list.
 
