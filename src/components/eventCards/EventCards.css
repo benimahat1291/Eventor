@@ -8,6 +8,13 @@
   padding: 1rem 0;
 }
 
+.eventcards__loading {
+    display: flex;
+    justify-content: center;
+    height: 70vh;
+
+}
+
 .eventcard__container {
   border-radius: 2px;
   width: 20rem;

@@ -38,6 +38,7 @@ const Event = ({eventId}) => {
         API.updateRegisteredById(confId, email).then(() => {
             alert("Added to Watchlist")
         })
+        setTimeout(() => (history.push("/home/watchlist")))
     }
 
 
