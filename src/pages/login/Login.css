@@ -1,75 +1,184 @@
-
 #particles-js {
-    background: radial-gradient(circle, #e7eff6 0%,
-    #1167b1  0%);
-    height: 100vh;
+  background: radial-gradient(circle, #e7eff6 0%, #1167b1 0%);
+  height: 100vh;
+  width: 100vw;
 }
 
 .login__container {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    position: absolute;
-    top: 50%;
-    left: 50%
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  background-color: #fff;
+  top: 40%;
+  left: 50%;
 }
-
-
-
-
 
 .login__card {
-    width: 28rem;
-    height: 28rem;
-    position: absolute;
-    z-index: 200;
-    background: none;
-    border-radius: 100%;
-    box-shadow: 0 0 30px white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  width: 28rem;
+  height: 28rem;
+  position: absolute;
+  z-index: 200;
+  background: none;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
-
-.login__card > h1 {
-    font-size: 5rem;
-    color: #fff; 
-    margin: 0;
-
-}
 .login__card > h2 {
-    font-size: 1.8rem;
-    color: lavender;
+  font-size: 1.8rem;
+  color: #fff;
+  opacity: 0.7;
+  font-weight: lighter;
 }
 
 .loginBtn {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: none;
-    color:  white ;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: none;
+  color: white;
 
-    font-size: 20px;
-    font-weight: bold;
-    margin-top: 3vh;
-    border-width: 0px;
-    border-radius: 25px;
-    height: 7vh;
-    width: 15rem;
-    z-index: 100;
+  font-size: 20px;
+  font-weight: bold;
+  margin-top: 3vh;
+  border-width: 0px;
+  border-radius: 25px;
+  height: 7vh;
+  width: 15rem;
+  z-index: 100;
 }
 
 .loginBtn:hover {
-    background: white;
-    color:  #1167b1 ;
-    cursor: pointer;
-
+  background: white;
+  color: #1167b1;
+  cursor: pointer;
 }
 
+.animate {
+  font-size: 50px;
+  margin: 100px 0 0;
+  border-bottom: 2px solid #ccc;
+  margin-bottom: 1rem;
+}
 
-@media only screen and (max-width: 768px) {
-    
+.animate span {
+  display: inline-block;
+}
+
+.animate span:nth-of-type(2) {
+  animation-delay: 0.05s;
+}
+.animate span:nth-of-type(3) {
+  animation-delay: 0.1s;
+}
+.animate span:nth-of-type(4) {
+  animation-delay: 0.15s;
+}
+.animate span:nth-of-type(5) {
+  animation-delay: 0.2s;
+}
+.animate span:nth-of-type(6) {
+  animation-delay: 0.25s;
+}
+.animate span:nth-of-type(7) {
+  animation-delay: 0.3s;
+}
+.animate span:nth-of-type(8) {
+  animation-delay: 0.35s;
+}
+
+/* Animation One */
+
+.one span {
+  color: #fff;
+  font-size: 5rem;
+  opacity: 0;
+  transform: translate(-150px, -50px) rotate(-180deg) scale(3);
+  animation: revolveScale 1s forwards;
+}
+
+@keyframes revolveScale {
+  60% {
+    transform: translate(20px, 20px) rotate(30deg) scale(0.3);
   }
-  
+
+  100% {
+    transform: translate(0) rotate(0) scale(1);
+    opacity: 1;
+  }
+}
+
+.link_wrapper {
+  position: relative;
+  margin-top: 2rem;
+}
+
+.login__card a {
+  display: block;
+  width: 250px;
+  height: 50px;
+  line-height: 50px;
+  font-weight: bold;
+  text-decoration: none;
+  background: #1167b1;
+  text-align: center;
+  color: #fff;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border: 3px solid #fff;
+  transition: all 0.35s;
+}
+
+.icon {
+  width: 50px;
+  height: 50px;
+  border: 3px solid transparent;
+  position: absolute;
+  transform: rotate(45deg);
+  right: 0;
+  top: 0;
+  z-index: -1;
+  transition: all 0.35s;
+}
+
+.icon svg {
+  width: 30px;
+  position: absolute;
+  top: calc(50% - 15px);
+  left: calc(50% - 15px);
+  transform: rotate(-45deg);
+  fill: #fff;
+  transition: all 0.35s;
+}
+
+.login__card a:hover {
+  width: 200px;
+  border: 3px solid #fff;
+  background: transparent;
+  color: #fff;
+}
+
+.login__card  a:hover + .icon {
+  border: 3px solid #fff;
+  right: -25%;
+}
+
+@media only screen and (max-width: 500px) {
+  .login__container {
+    top: 30%;
+    left: 50%;
+  }
+
+  .login__card > h2 {
+    font-size: 1.5rem;
+    color: #fff;
+    opacity: 0.7;
+    font-weight: lighter;
+  }
+
+  .one span {
+    font-size: 3rem;
+  }
+}
